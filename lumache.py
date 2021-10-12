@@ -1,8 +1,8 @@
 """
-Lumache - Python library for cooks and food lovers.
+JKCS.py
 """
 
-__version__ = "0.1.0"
+__version__ = "3.0.1"
 
 
 class InvalidKindError(Exception):
