@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'JKCS.py'
+copyright = '2021, Jakub Kubečka'
+author = 'Jakub Kubečka'
 
-release = '0.1'
-version = '0.1.0'
+release = '3.0'
+version = '3.0.1'
 
 # -- General configuration
 
