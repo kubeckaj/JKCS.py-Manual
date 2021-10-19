@@ -27,7 +27,7 @@ For example (sulfuric acid--ammonia):
 MOLECULE NAMES IN THE DATABASE
 ------------------------------
 
-  p - proton
+  p - proton \n
   am - ammonia
   
   sa - sulfuric acid
