@@ -16,4 +16,5 @@ Contents
 .. toctree::
 
    usage
+   JKQC
    api
