@@ -28,7 +28,6 @@ MOLECULE NAMES IN THE DATABASE
 ------------------------------
 
   p - proton
-  
   am - ammonia
   
   sa - sulfuric acid
