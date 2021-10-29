@@ -6,11 +6,12 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+Activate JKCS python environment for Jupyter
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ pip install --user ipykernel
+   (.venv) $ python -m ipykernel install --user --name=jkcs
 
 HOW TO
 ----------------
