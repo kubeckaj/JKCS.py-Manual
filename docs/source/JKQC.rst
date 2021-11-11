@@ -6,9 +6,11 @@ Jammy Key for Quantum Chemistry data of molecular clusters.
 RUNNING
 -------
 
-To run JKQC use:
+To run JKQC use (yet the file input and output has to be modified in the script):
 
-   $ python JKQC.py
+.. code:: bash
+
+   python JKQC.py
 
 DATABASE
 --------
@@ -27,14 +29,9 @@ For example (sulfuric acid--ammonia):
 MOLECULE NAMES IN THE DATABASE
 ------------------------------
 
-  p - proton
-  
-  am - ammonia
-  
-  sa - sulfuric acid
-  
-  sam - bisulfate
-  
-  dma - dimethylammine
-  
-  gd - guanidine
+.. p - proton
+.. am - ammonia
+.. sa - sulfuric acid
+.. sam - bisulfate
+.. dma - dimethylammine
+.. gd - guanidine
