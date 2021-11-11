@@ -14,12 +14,14 @@ Nomenclature
 .. dma - dimethylammine
 .. gd - guanidine
 
-DATABASE
---------
+Requirements
+------------
 
-To add some clusters to the Database folder, you can use the `sh addJKQC.sh` command.
+Your source folder has to contain calculations for all monomers!
+Follow the nomenclature for renaming the file names.
+To add some clusters to the Database folder, you can use the ``sh addJKQC.sh`` command.
 
-!!! I strongly recommend to check the `JKname` parameters
+!!! I strongly recommend to check the ``JKname`` parameters
 
 For example (sulfuric acid--ammonia):
 
