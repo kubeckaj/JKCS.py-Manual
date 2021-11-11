@@ -1,11 +1,21 @@
-JKQC
-====
+------
+ JKQC
+------
 
 Jammy Key for Quantum Chemistry data of molecular clusters.
 
+.. toctree::
+   :maxdepth: 3
+   :caption: JKQC
 
-Nomenclature
-------------
+   Nomenclature
+   XTB
+
+Requirements
+============
+
+Nomenclature for file names
+---------------------------
 
 .. p - proton
 .. am - ammonia
@@ -14,11 +24,13 @@ Nomenclature
 .. dma - dimethylammine
 .. gd - guanidine
 
-Requirements
+Rename files
 ------------
 
 Your source folder has to contain calculations for all monomers!
 Follow the nomenclature for renaming the file names.
+
+
 To add some clusters to the Database folder, you can use the ``sh addJKQC.sh`` command.
 
 !!! I strongly recommend to check the ``JKname`` parameters
@@ -41,6 +53,27 @@ To run JKQC use (yet the file input and output has to be modified in the script)
 .. code:: bash
 
    python JKQC.py
+   
+JKQCprint.py
+============
+
+.. code:: bash
+
+   python JKQC.py <Database> <Parameters> #e.g.: python JKQC.py mydatabase.pkl -b -el
+
++-------------------+-----------------------------+-------------------+----------------------------+
+| **<Parameter>**   | **Specification**           |  **Note**                                      |
++-------------------+-----------------------------+-------------------+----------------------------+
+| **INFO**                                                                                         |
++-------------------+-----------------------------+-------------------+----------------------------+
+| -b                | basaname of the input file  |                                                |
++-------------------+-----------------------------+-------------------+----------------------------+
+| -el               | electronic energy           |                                                | 
+| -g                | gibbs free energy           |                                                |
++-------------------+-----------------------------+-------------------+----------------------------+
+| -t *<real>*       | temperature                 |                                                |
++-------------------+-----------------------------+-------------------+----------------------------+
+
 
 
 
