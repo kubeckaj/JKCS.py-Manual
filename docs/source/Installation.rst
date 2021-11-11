@@ -1,19 +1,22 @@
    
 |Build Status| |pypi| |doi| |Beta|
 
-Installation
-============
+------------------------
+ Setup and Installation
+------------------------
 
 .. toctree::
+   :maxdepth: 3
+   :caption: Setup and Installation
 
    JKCS
    XTB
 
 JKCS
-----
+====
 
 XTB
----
+===
 
 The Linux version can be obtained from https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/xtb/xtb
 When using the XTB program, either use the full path directory to the excecutables or put the following lines to your ``~/.bashrc`` file:
