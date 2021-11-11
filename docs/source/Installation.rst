@@ -26,4 +26,4 @@ and modify the following line in the ``~/.JKCSusersetup.txt``:
 
 .. code::
 
-   PATH_XTB="[-XTB-folder-path-]"           #e.g.: "/user/kubeckaj/XTB6.4" 
+   PATH_XTB="[-XTB-folder-path-]"            #e.g.: "/user/kubeckaj/XTB6.4" 
