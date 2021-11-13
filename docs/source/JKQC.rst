@@ -17,12 +17,12 @@ Requirements
 Nomenclature for file names
 ---------------------------
 
-.. p - proton
-.. am - ammonia
-.. sa - sulfuric acid
-.. sam - bisulfate
-.. dma - dimethylammine
-.. gd - guanidine
+   p - proton
+   am - ammonia
+   sa - sulfuric acid
+   sam - bisulfate
+   dma - dimethylammine
+   gd - guanidine
 
 Rename files
 ------------
