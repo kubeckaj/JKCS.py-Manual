@@ -4,12 +4,6 @@
 
 Jammy Key for Quantum Chemistry data of molecular clusters.
 
-.. toctree::
-   :maxdepth: 3
-   :caption: JKQC
-
-   Nomenclature
-   XTB
 
 Requirements
 ============
