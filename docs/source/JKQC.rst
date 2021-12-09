@@ -4,14 +4,15 @@
 
 Jammy Key for Quantum Chemistry data of molecular clusters.
 
+.. contents::
 
 Requirements
 ============
 
-Nomenclature for file names
----------------------------
+Input files
+-----------
 
-.. list-table:: nomenclature for molecules
+.. list-table:: Nomenclature for molecules
     :widths: 30 100
     :header-rows: 1
 
