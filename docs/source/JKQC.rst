@@ -19,7 +19,7 @@ Requirements
 Nomenclature for file names
 ---------------------------
 
-.. list-table:: abbreviations
+.. list-table:: nomenclature for molecules
     :widths: 30 100
     :header-rows: 1
 
