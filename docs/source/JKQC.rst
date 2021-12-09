@@ -1,5 +1,3 @@
-.. _abbreviations:
-
 ------
  JKQC
 ------
