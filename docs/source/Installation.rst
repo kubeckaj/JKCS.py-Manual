@@ -12,8 +12,12 @@
    JKCS
    XTB
 
+.. _JKCS:
+
 JKCS
 ====
+
+.. _XTB:
 
 XTB
 ===
