@@ -13,24 +13,24 @@ Input files
 -----------
 
 .. list-table:: Nomenclature for molecules
-   :widths: 30 100
-   :header-rows: 1
+    :widths: 30 100
+    :header-rows: 1
 
-   * - neutral
-     - positive
-     - negative
-   * - 1sa = sulfuric acid
-     - 
-     - 1b = bisulphate
-   * - 1am = ammonia
-     - 1am1p = ammonium
-     -
-   * - 1dma = dimethylamine
-     - 1dma1p = dimethylammonium
-     -
-   * - 1gd = guanidine
-     - 1gd1p = guanidium
-     -
+    * - neutral
+      - positive
+      - negative
+    * - 1sa = sulfuric acid
+      - 
+      - 1b = bisulphate
+    * - 1am = ammonia
+      - 1am1p = ammonium
+      -
+    * - 1dma = dimethylamine
+      - 1dma1p = dimethylammonium
+      -
+    * - 1gd = guanidine
+      - 1gd1p = guanidium
+      -
 
 Rename files
 ------------
