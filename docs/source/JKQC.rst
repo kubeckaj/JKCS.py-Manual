@@ -1,3 +1,5 @@
+.. _abbreviations:
+
 ------
  JKQC
 ------
@@ -16,8 +18,6 @@ Requirements
 
 Nomenclature for file names
 ---------------------------
-
-.. _abbreviations:
 
 .. list-table:: abbreviations
     :widths: 30 100
