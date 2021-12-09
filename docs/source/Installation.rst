@@ -1,23 +1,12 @@
-   
-|Build Status| |pypi| |doi| |Beta|
-
 ------------------------
  Setup and Installation
 ------------------------
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Setup and Installation
-
-   JKCS
-   XTB
-
-.. _JKCS:
+.. contents::
 
 JKCS
 ====
 
-.. _XTB:
 
 XTB
 ===
