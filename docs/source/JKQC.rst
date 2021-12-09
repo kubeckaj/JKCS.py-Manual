@@ -13,7 +13,7 @@ Input files
 -----------
 
 .. list-table:: Nomenclature for molecules
-    :widths: 30 100
+    :widths: 30 30 30
     :header-rows: 1
 
     * - neutral
