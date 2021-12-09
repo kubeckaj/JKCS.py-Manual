@@ -17,12 +17,25 @@ Requirements
 Nomenclature for file names
 ---------------------------
 
-   p - proton
-   am - ammonia
-   sa - sulfuric acid
-   sam - bisulfate
-   dma - dimethylammine
-   gd - guanidine
+.. list-table:: abbreviations
+    :widths: 30 100
+    :header-rows: 1
+
+   * - neutral
+     - positive
+     - negative
+   * - 1sa = sulfuric acid
+     - 
+     - 1b = bisulphate
+   * - 1am = ammonia
+     - 1am1p = ammonium
+     -
+   * - 1dma = dimethylamine
+     - 1dma1p = dimethylammonium
+     -
+   * - 1gd = guanidine
+     - 1gd1p = guanidium
+     -
 
 Rename files
 ------------
