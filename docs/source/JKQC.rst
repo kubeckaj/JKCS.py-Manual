@@ -6,6 +6,73 @@ Jammy Key for Quantum Chemistry data of molecular clusters.
 
 .. contents::
 
+Simple examples
+===============
+
+Database manipulation
+---------------------
+
+Collect data from *.log (and *.xyz, *.out) files and pickle them into a database:
+
+.. code:: bash
+   
+   python JKQC.py *.log -out local_database.pkl
+   
+Add data into database:
+
+.. code:: bash
+   
+   python JKQC.py *.log -in local_database.pkl -out local_database.pkl
+   
+Connect two databases:
+
+.. code:: bash
+   
+   python JKQC.py -in database1.pkl -in database2.pkl -out joined_database.pkl
+   python JKQC.py database1.pkl database2.pkl -out joined_database.pkl
+   
+Extract part of a database !!! NOT FUNCTIONAL YET !!!:
+
+.. code:: bash
+   
+   python JKQC.py -in mydatabase.pkl -extract 1sa2w -out 1sa2w_database.pkl
+
+Quantum chemistry data
+----------------------
+
+Extract (name and) electronic energy from files/database:
+
+.. code:: bash
+   
+   python JKQC.py *.log -b -el
+   python JKQC.py database.pkl -b -el //significantly faster
+   
+Extract (name and) electronic energy for a specific cluster(s) !!! NOT FUNCTIONAL YET !!!:
+
+.. code:: bash
+   
+   python JKQC.py -in mydatabase.pkl -extract 1sa2w -b -el
+   python JKQC.py -in mydatabase.pkl -extract 3sa,1sa0-10w -b -el
+
+Extract (name and) gibbs free energy corrected for SP DLPNO-CCSD(T) energy (Orca) !!! NOT FUNCTIONAL YET !!!:
+
+.. code:: bash
+   
+   python JKQC.py -in mydatabase.pkl -b -GD
+   
+Extract (name and) enthalpy and entropy:
+
+.. code:: bash
+   
+   python JKQC.py -in mydatabase.pkl -b -h -s
+   
+Calculate formation Gibbs free energy (global minimum approximation) !!! NOT FUNCTIONAL YET !!!:
+
+.. code:: bash
+   
+   python JKQC.py -in mydatabase.pkl -extract 1sa,2sa -b -GD -formation
+   
+
 Requirements
 ============
 
@@ -82,7 +149,36 @@ JKQCprint.py
 
 .. code:: bash
 
-   python JKQC.py <Database> <Parameters> #e.g.: python JKQC.py mydatabase.pkl -b -el
+   python JKQC.py <Files> <Database> <Parameters> 
+
+Database manipulation
+---------------------
+
+.. list-table:: Input data
+    :widths: 30 30
+    :header-rows: 1
+    
+    * - Specified
+      - Description
+    * - NOTHING
+      - takes in all *.log files
+    * - FILES
+      - takes in all specified *.log, *.out, *.xyz files
+    * - DATABASES
+      - takes in all specifies (-in) *.pkl databases
+    * - COMBINED
+      - FILES and DATABASES combined 
+      
+.. list-table:: Output database
+    :widths: 30 30
+    :header-rows: 1
+    
+    * - Specified
+      - Description
+    * - NOTHING
+      - in classified conditions: mydatabase.out
+    * - DATABASE
+      - saves all input data into -out specified .pkl database
 
 INFO
 ----
