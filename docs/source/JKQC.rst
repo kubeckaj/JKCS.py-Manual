@@ -28,6 +28,9 @@ Input files
     * - 1am = ammonia
       - 1am1p = ammonium
       -
+    * - 1ma = methyammine
+      - 1ma1p = methylammonium
+      - 
     * - 1dma = dimethylamine
       - 1dma1p = dimethylammonium
       -
