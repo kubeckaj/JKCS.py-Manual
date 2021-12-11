@@ -22,6 +22,9 @@ Input files
     * - 1sa = sulfuric acid
       - 
       - 1b = bisulphate
+    * - 1msa = methanesulfonic acid
+      - 
+      - 1mb = methanebisulphate
     * - 1am = ammonia
       - 1am1p = ammonium
       -
@@ -31,6 +34,9 @@ Input files
     * - 1gd = guanidine
       - 1gd1p = guanidium
       -
+    * - 1eda = ethylamine
+      - 1eda1p = ethylammonium
+      - 
 
 Rename files
 ------------
