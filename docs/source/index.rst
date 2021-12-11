@@ -3,10 +3,9 @@ Welcome to JKCS.py documentation!
 
 **JKCS** 
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Check out the `usage` section for further information, including
+how to `installation` the project.
 
-.. note::
 
    This project is under active development.
 
