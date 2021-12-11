@@ -12,7 +12,7 @@ Simple examples
 Database manipulation
 ---------------------
 
-Collect data from *.log (and *.xyz, *.out) files and pickle them into a database:
+Collect data from .log (and .xyz, .out) files and pickle them into a database:
 
 .. code:: bash
    
@@ -161,11 +161,11 @@ Database manipulation
     * - Specified
       - Description
     * - NOTHING
-      - takes in all *.log files
+      - takes in all .log files working in folder
     * - FILES
-      - takes in all specified *.log, *.out, *.xyz files
+      - takes in all specified .log, .out, .xyz files
     * - DATABASES
-      - takes in all specifies (-in) *.pkl databases
+      - takes in all specified (-in) .pkl databases
     * - COMBINED
       - FILES and DATABASES combined 
       
