@@ -34,12 +34,18 @@ Input files
     * - 1dma = dimethylamine
       - 1dma1p = dimethylammonium
       -
-    * - 1gd = guanidine
-      - 1gd1p = guanidium
+    * - 1tma = trimethylamine
+      - 1tma1p = trimethylammonium
       -
     * - 1eda = ethylamine
       - 1eda1p = ethylammonium
       - 
+    * - 1gd = guanidine
+      - 1gd1p = guanidium
+      -
+    * - 1w = water
+      - 1w1p = hydronium
+      - 1oh = hydroxide
 
 Rename files
 ------------
