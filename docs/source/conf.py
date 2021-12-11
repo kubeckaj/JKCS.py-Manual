@@ -29,6 +29,7 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
+master_doc = 'index'
 html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
