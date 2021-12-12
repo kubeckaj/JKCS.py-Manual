@@ -4,6 +4,8 @@
 
 Jammy Key for Quantum Chemistry data of molecular clusters.
 
+These scripts converts the quantum chemistry output files (.log,.out,.xyz) into database (.pkl), which is takes significantly less memory and accelerates the data post-processing (e.g., printing energies, including various corrections, and calculation formation properties for ACDC). This script is not parralelized (at least yet), and thus, using more CPU has a minimal gain. Depending on the files sizes/cluster sizes/types, the pikling takes approximately from 15 seconds/1000 structures to 3 minutes/1000 structures. Nevertheless, the post-processing usually takes from -immidiately- to a few seconds.
+
 .. contents::
 
 Simple examples
