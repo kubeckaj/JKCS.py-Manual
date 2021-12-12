@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'JKCS.py'
+project = 'JKCS'
 copyright = '2021, Jakub Kubečka'
 author = 'Jakub Kubečka'
 
