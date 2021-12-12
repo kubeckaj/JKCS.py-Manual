@@ -155,6 +155,12 @@ JKQCprint.py
 
 Database manipulation
 ---------------------
+ 
+  <Files> 
+input files can be any .log, .out, and .xyz files, or
+
+--in database.pkl
+  input .pkl database (the --in command is actually not necessary)
 
 .. list-table:: Input data
     :widths: 30 30
@@ -170,7 +176,10 @@ Database manipulation
       - takes in all specified (-in) .pkl databases
     * - COMBINED
       - FILES and DATABASES combined 
-      
+
+--out database.pkl
+  output .pkl database (the --out command is necessary)
+  
 .. list-table:: Output database
     :widths: 30 30
     :header-rows: 1
@@ -184,7 +193,7 @@ Database manipulation
 
 INFO
 ----
---b
+--b,--basename
   base name of the given files (e.g. for \data\1sa1am.log -> 1sa1am)
   
 QC-data
