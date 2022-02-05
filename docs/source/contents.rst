@@ -16,6 +16,5 @@ Contents
 
    usage
    Installation
-   JKCS
    JKQC
    api
