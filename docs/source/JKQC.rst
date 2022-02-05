@@ -157,6 +157,7 @@ Database manipulation
 ---------------------
  
   <Files> 
+  
 input files can be any .log, .out, and .xyz files, or
 
 --in database.pkl
