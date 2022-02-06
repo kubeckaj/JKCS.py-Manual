@@ -13,8 +13,17 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 3
+   :caption: JKCS
 
-   usage
-   Installation
-   JKQC
-   api
+   Introduction
+   JKCSSetupAndInstallation
+   ClusterSubmission
+   JKCS1prepare
+   
+.. toctree::
+   :maxdepth: 3
+   :caption: JKQC
+   JKQCSetupAndInstallation
+   Databases
+   
