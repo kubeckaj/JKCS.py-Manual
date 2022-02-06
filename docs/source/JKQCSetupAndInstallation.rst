@@ -1,6 +1,6 @@
-------
- JKQC
-------
+====================
+Setup & Installation
+====================
 
 Jammy Key for Quantum Chemistry data of molecular clusters.
 
