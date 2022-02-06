@@ -24,6 +24,7 @@ Contents
 .. toctree::
    :maxdepth: 3
    :caption: JKQC
+   
    JKQCSetupAndInstallation
    Databases
    
