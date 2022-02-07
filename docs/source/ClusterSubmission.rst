@@ -52,7 +52,7 @@ You can overwrite the default arguments by using these commands:
    JKCS3_run -rf XTB -nf DFT_opt -p G16 -m “ # wb97”
 
 \-N,\-nodes <integer>
-   number of nodes. It is by default 1. However, the functionality of this argument was not properly tested yet. See ``Multinodal calculations`` for more details
+   number of nodes. It is by default 1. However, the functionality of this argument was not properly tested yet. See the greasy-multitask section on this page for more details
 
 \-jpt  <integer>
   number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 QC calculations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
