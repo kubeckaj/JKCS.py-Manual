@@ -2,15 +2,14 @@
 Cluster submission
 ==================
 
-When working on a (super)computer cluster, all default parameters for submitting jobs are taken from the
-file ``parameters.txt`` that is in each subfolder formed from ``input.txt`` with the JKCS1_prepare script. It is assumed that the computer system uses SBATCH to submit jobs. Hence, additional parameters for the SBATCH command could be eventually modified in the ``~/.JKCSusersetup.txt`` under the program_SBATCH function. When calling a JKCS script, it is also possible to overwrite the submission parameters by arguments shown on this page. 
+When working on a (super)computer cluster, all default parameters for submitting jobs are taken from ``parameters.txt`` in each subfolder formed from ``input.txt`` by JKCS1_prepare. It is assumed that the computer system uses SBATCH to submit jobs. Hence, additional parameters for the SBATCH command could be eventually modified in the ``~/.JKCSusersetup.txt`` under the program_SBATCH function. When calling a JKCS script, it is also possible to overwrite the submission parameters by the arguments shown on this page. 
 
-Remember that only JKCS2_explore, JKCS3_run, and JKCS4_collect are scripts that would submit jobs to cluster as these scripts employ 3rd party programs that might demand considerable computational resources. Using the submission parameters for JKCS0_copy, JKCS1_prepare, and JKCS5_filter is not possible. 
+Remember that only JKCS2_explore, JKCS3_run, and JKCS4_collect are scripts that would submit jobs to cluster as these scripts employ 3rd party programs that might demand considerable computational resources. Using the submission parameters for JKCS0_copy, JKCS1_prepare, and JKCS5_filter is not possible (they run locally). 
 
-Run localy
-----------
+Run locally
+-----------
 
-If you want to run also JKCS2-4 on your local computer and not submit any jobs, you can use:
+If you want to also run JKCS2-4 on your local computer and not submit any jobs, you can use:
 
 \-loc
 Perform all tasks on computer you are now logged in.
@@ -19,10 +18,11 @@ Perform all tasks on computer you are now logged in.
   
    JKCS3_run -p XTB -m “--opt --gfn 1” -loc
    JKCS4_collect XTB -loc
+   JKCS4_collect DFT_freq -gibbs -loc
 
 .. note::
 
-    It is completely fine to run some tests cluster login nodes BUT keep the tests very short (at maximum 1 or very few minutes) and you should also stay low with memory requirements. 
+    It is completely fine to run some tests cluster login nodes BUT keep the tests very short (at maximum 1 or very few minutes), and you should also stay low with memory requirements. 
 
 Submission arguments
 --------------------
@@ -30,36 +30,45 @@ Submission arguments
 You can overwrite the default arguments by using these commands:
 
 \-cpu  <integer>
-   number of CPU(s) used for one calculation
+   number of CPUs used for one calculation. If you specify only the number of CPUs, the rest of submission arguments (e.g., walltime, partition name) are still taken from ``parameters.txt``
+   
+.. code:: bash
+  
+   JKCS3_run -p G16 -rf XTB -nf DFT_opt -m "# wb97xd 6-31++g** opt" -cpu 8   
 
 \-par,\-partition <string>
-   partition (queue) name (e.g., test, short, longrun, or hugemem). You should see all partitions by typing command ``info``
+   partition (queue) name (e.g., test, short, longrun, or hugemem). You should see all partitions by typing the command: ``sinfo``
 
 \-time <time_format>
-   requested walltime (e.g., 72:00:00, 1-00:00:00 or 10:00)
-
-\-taks,\-maxtasks <integer>
-   max. number of tasks to be submitted (per cluster subfolder). I am worried that people sometimes do not properly calculate how many jobs they could submit with one command. Therefore, I did restricted your submission to max 100 jobs. You can easily raise the threshold by this argument. 
+   requested walltime (e.g., 72:00:00, 1-00:00:00 or 10:00). If you need to submit a simple/fast test on the test partition, run:
+   
+.. code:: bash
+  
+   JKCS2_explore -pop 2 -gen 2 -lm 2 -par test -time 10:00
+   JKCS4_collect ABC -par test -time 10:00
 
 \-mem,\-memory <memory_string_format>
   size of memory allocated per CPU [e.g., 4000mb or 32gb]
 
 \-jpt,\-jobs <integer>  
-   number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 Gaussian optimisations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
+   number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 Gaussian optimizations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
 
 .. code:: bash
   
-   JKCS3_run -rf XTB -nf DFT_opt -p G16 -m “ # wb97”
-
-\-N,\-nodes <integer>
-   number of nodes. It is by default 1. However, the functionality of this argument was not properly tested yet. See the greasy-multitask section on this page for more details
-
-\-jpt  <integer>
-  number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 QC calculations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
+   JKCS3_run -rf XTB -nf DFT_opt -p G16 -m "# wb97xd 6-31++g** opt" -jpt 5 -cpu 8
+   
+   If you have many conformer combinations, you can reduce the configurational search for each of them and run them in series. If you have 300 combinations, you can submit only 30 jobs using (+ you can do the same with the subsequent XTB optimization):
 
 .. code:: bash
+  
+   JKCS2_explore -pop 50 -gen 50 -lm "6000/NoC" -jpt 10
+   JKCS3_run -jpt 10
    
-   JKCSxxxxxxx  -jpt 5 -cpu 8
+\-taks,\-maxtasks <integer>
+   max. number of tasks to be submitted (per cluster subfolder). I am worried that people sometimes do not adequately calculate how many jobs they could submit with one command. Therefore, I did restrict your submission to max 100 jobs. You can easily raise this threshold by this argument. 
+
+\-N,\-nodes <integer>
+   number of nodes. It is by default 1. However, the functionality of this argument was not properly tested yet. See the greasy-multitask section on this page for more details.
 
 .. note::
 
@@ -95,3 +104,7 @@ I can also submit more jobs per each task. For instance, one greasy-worker will 
 .. note::
 
     I did not test how durable is the argument -jpt. However, at least 3 jobs per task went through easily. 100 did not. Let me know if you find the limit.
+    
+.. note::
+
+    Yet, the greasy option works only for JKCS3_run.
