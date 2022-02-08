@@ -50,7 +50,7 @@ You can overwrite the default arguments by using these commands:
 \-mem,\-memory <memory_string_format>
   size of memory allocated per CPU [e.g., 4000mb or 32gb]
 
-\-jpt,\-jobs <integer>  
+\-jpt <integer>  
    number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 Gaussian optimizations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
 
 .. code:: bash
