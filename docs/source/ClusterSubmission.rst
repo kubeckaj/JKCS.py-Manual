@@ -12,7 +12,7 @@ Run locally
 If you want to also run JKCS2-4 on your local computer and not submit any jobs, you can use:
 
 \-loc
-Perform all tasks on computer you are now logged in.
+   Perform all tasks on computer you are now logged in.
 
 .. code:: bash
   
