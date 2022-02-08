@@ -57,7 +57,7 @@ You can overwrite the default arguments by using these commands:
   
    JKCS3_run -rf XTB -nf DFT_opt -p G16 -m "# wb97xd 6-31++g** opt" -jpt 5 -cpu 8
    
-   If you have many conformer combinations, you can reduce the configurational search for each of them and run them in series. If you have 300 combinations, you can submit only 30 jobs using (+ you can do the same with the subsequent XTB optimization):
+If you have many conformer combinations, you can reduce the configurational search for each of them and run them in series. If you have 300 combinations, you can submit only 30 jobs using (+ you can do the same with the subsequent XTB optimization):
 
 .. code:: bash
   
