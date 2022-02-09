@@ -67,22 +67,22 @@ This section defines parameters for submitting JKCS to (super)computer cluster. 
 with 3rd-party programs that are further abreviated as: ABC = ABCluster, XTB, G16 = Gaussian16, and ORCA. For each
 program, the following parameters need to be specified:
 
-\\MAXTASKS
+  MAXTASKS
   maximum number of tasks that can run in parallel. Beginners should not adjust this.
 
-\\CPU
+  CPU
   number of CPUs
   
-\\NODES
+  NODES
   number of nodes. Beginners should leave 1.
 
-\\REQ.TIME
+  REQ.TIME
   the requested walltime (expected length of calculations)
  
-\\PARTITION
-  the name of the cluster partition (e.g. small, large, hugemem)
+  PARTITION
+  the name of cluster partition (e.g. small, large, hugemem)
   
-\\MEMPERCPU
+  MEMPERCPU
   the amount of memory per CPU
 
 .. note::
