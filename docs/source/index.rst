@@ -15,7 +15,6 @@ Contents
    :maxdepth: 3
    :caption: JKCS
 
-   Introduction
    JKCSSetupAndInstallation
    Inputfile
    JKCS0_copy
