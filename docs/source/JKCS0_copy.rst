@@ -36,19 +36,19 @@ Here are few examples:
 
 .. code:: 
 
-   w ............ water (H2O,OH-,H+)     cd .......... carbon dioxide (CO2)
-   aq ........... water (H20)            m ........... methane (CH4)
-                                         ar .......... argone (Ar)
-   nta .......... nitric acid (HNO3)     ne .......... neone (Ne)
-   sa ........... sulfuric acid (H2SO4)  he ........... helium
+   w ............ water (H2O,OH-,H+)         cd .......... carbon dioxide (CO2)
+   aq ........... water (H20)                m ........... methane (CH4)
+                                             ar .......... argone (Ar)
+   nta .......... nitric acid (HNO3)         ne .......... neone (Ne)
+   sa ........... sulfuric acid (H2SO4)      he ........... helium
    msa .......... methanesulfonic acid
-                                         h ............ proton (H+)
-   am ........... ammonia (NH3)          na ........... sodium (Na+)
-   gd ........... guanidine (CN3H5)      cl ........... chloride (Cl-)
+                                             h ............ proton (H+)
+   am ........... ammonia (NH3)              na ........... sodium (Na+)
+   gd ........... guanidine (CN3H5)          cl ........... chloride (Cl-)
    dma .......... dimethylamine (C2H7N)
-   tma .......... trimethylamine (C3H9N) ica ......... iodic acid (HIO3)
-   urea ......... urea (CH4N2O)          isa ......... iodous acid (HIO2)
-   buoh ......... butanol (C2H5OH)       ip .......... iodine pentoxide (I2O5)
+   tma .......... trimethylamine (C3H9N)     ica ......... iodic acid (HIO3)
+   urea ......... urea (CH4N2O)              isa ......... iodous acid (HIO2)
+   buoh ......... butanol (C2H5OH)           ip .......... iodine pentoxide (I2O5)
     
 EXAMPLE: Consider an example of a negatively charged cluster containing 1 ammonia and 2 sulfuric acid molecules. Type "JKCS0_copy sa am" to creat ``input.txt``. ``input.txt`` will already contain the information of cis- and trans-sulfuric acid, bisulfate, sulfate, ammonia and ammonium in the "structure of building monomers" section. The total charge and composition will however not be the same as our desired cluster. We will thus have to change the total charge to -1 and the composition to "2_1". 
 
