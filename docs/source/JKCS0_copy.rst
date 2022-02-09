@@ -32,7 +32,7 @@ Here are few examples:
     
 .. note::
  
-   If your structure is not available in JKCS database, see the section: New ABCluster structures for more details
+   If your structure is not available in JKCS database, you have to create the ABCluster input by yourself. See ABCluster manual for more details.
 
 .. code:: 
 
