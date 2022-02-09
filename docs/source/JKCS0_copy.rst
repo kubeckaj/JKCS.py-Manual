@@ -5,8 +5,7 @@ JKCS0_copy
 JKCS0_copy automatically creates ``input.txt`` based on the monomers given as arguments.
 JKCS contains optimized structures for the different conformers and conjugated acids/bases of some
 of the most prominent monomers in atmospheric clusters (such as sa = sulfuric acid, am = ammonia, na = nitric acid
-or w = water). When calling JKCS0_copy with the name of some monomers as arguments, an input.txt
-file will be created containing the paths to the optimized structures of the conformers and conjugated
+or w = water). Calling JKCS0_copy creates ``input.txt`` containing the paths to the optimized structures of the conformers and conjugated
 acids/bases of all the requested monomers in the "structure of building monomers" part of the file.
 
 It is once again important to note that even when creating ``input.txt`` through JKCS0_copy,
