@@ -27,7 +27,7 @@ If you want to also run JKCS2-4 on your local computer and not submit any jobs, 
 Submission arguments
 --------------------
 
-To submit jobs to queue the sbatch command of the following format is automatically used by JKCS (you can modify it by modifying ``~/.JKCSusersetup.txt``):
+To submit jobs to queue the sbatch command of the following format is automatically used by JKCS (you can modify it in ``~/.JKCSusersetup.txt`` under the program_SBATCH function):
 
 .. code:: bash
 
