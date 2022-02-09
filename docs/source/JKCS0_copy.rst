@@ -25,13 +25,13 @@ proceeding.
        
 Here are few examples:
  
- .. code:: bash
+.. code:: bash
  
-    JKCS0_copy sa am       #creates input.txt with links to sulfuric acid and ammonia
-    JKCS0_copy msa am dma  #creates input.txt with links to methansulfonic acid, ammonia, and dimethylamine
-    JKCS0_copy -all        #created input.txt with links to all available structures
+   JKCS0_copy sa am       #creates input.txt with links to sulfuric acid and ammonia
+   JKCS0_copy msa am dma  #creates input.txt with links to methansulfonic acid, ammonia, and dimethylamine
+   JKCS0_copy -all        #created input.txt with links to all available structures
     
- .. note::
+.. note::
  
-    If your structure is not available in JKCS database, see the section: New ABCluster structures for more details
+   If your structure is not available in JKCS database, see the section: New ABCluster structures for more details
     
