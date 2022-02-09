@@ -68,22 +68,28 @@ with 3rd-party programs that are further abreviated as: ABC = ABCluster, XTB, G1
 program, the following parameters need to be specified:
 
   MAXTASKS
-  maximum number of tasks that can run in parallel. Beginners should not adjust this.
 
-  CPU
-  number of CPUs
+maximum number of tasks that can run in parallel. Beginners should not adjust this.
+
+  CPUs
+
+number of CPUs.
   
   NODES
-  number of nodes. Beginners should leave 1.
+
+number of nodes. Beginners should leave 1.
 
   REQ.TIME
-  the requested walltime (expected length of calculations)
+
+the requested walltime (expected length of calculations)
  
   PARTITION
-  the name of cluster partition (e.g. small, large, hugemem)
+
+the name of cluster partition (e.g. small, large, hugemem)
   
   MEMPERCPU
-  the amount of memory per CPU
+
+the amount of memory per CPU
 
 .. note::
 
