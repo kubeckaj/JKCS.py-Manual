@@ -34,7 +34,7 @@ Here are few examples:
  
    If your structure is not available in JKCS database, see the section: New ABCluster structures for more details
 
-.. code:: bash
+.. code:: 
 
    w ............ water (H2O,OH-,H+)     cd .......... carbon dioxide (CO2)
    aq ........... water (H20)            m ........... methane (CH4)
