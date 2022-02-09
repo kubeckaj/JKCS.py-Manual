@@ -94,9 +94,9 @@ Input files
     * - 1msa = methanesulfonic acid
       - 
       - 1mb = methanebisulphate
-    * - 1na = nitric acid
+    * - 1nta = nitric acid
       - 
-      - 1n = nitrate
+      - 1nt = nitrate
     * - 1am = ammonia
       - 1am1p = ammonium
       -
