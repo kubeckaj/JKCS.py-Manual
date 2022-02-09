@@ -19,7 +19,8 @@ Contents
    Introduction
    JKCSSetupAndInstallation
    ClusterSubmission
-   JKCS1prepare
+   JKCS0_copy
+   JKCS1_prepare
    
 .. toctree::
    :maxdepth: 3
