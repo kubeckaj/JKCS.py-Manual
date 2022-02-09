@@ -23,7 +23,7 @@ proceeding.
     
        JKCS0_copy -help
        
- Here are few examples:
+Here are few examples:
  
  .. code:: bash
  
