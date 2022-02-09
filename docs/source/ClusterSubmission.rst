@@ -27,6 +27,12 @@ If you want to also run JKCS2-4 on your local computer and not submit any jobs, 
 Submission arguments
 --------------------
 
+To submit jobs to queue the sbatch command of the following format is automatically used by JKCS (you can modify it by modifying ``~/.JKCSusersetup.txt``):
+
+.. code:: bash
+
+   sbatch -J "Job_name" -p "Partition_name" --time "Walltime" -N 1 --mem-per-cpu "Memory" script.sh
+
 You can overwrite the default arguments by using these commands:
 
 \-cpu  <integer>
