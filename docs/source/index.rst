@@ -1,13 +1,12 @@
-Welcome to JKCS.py documentation!
-===================================
+==============================
+Welcome to JKCS documentation!
+==============================
 
-**JKCS** 
+JKCS = Jammy Key for Configurational Sampling
 
-Check out the `usage` section for further information, including
-how to `installation` the project.
+.. image:: Webp.net-resizeimage.png
+      :alt: JKCS
 
-
-   This project is under active development.
 
 Contents
 --------
