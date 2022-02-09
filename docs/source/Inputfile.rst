@@ -48,38 +48,96 @@ This file contains the most import definitions for sampling the desired clusters
      am     0   /projappl/hvehkama/kubeckaj/Apps/JKCS2.1/JKCSx/../TOOLS/STRUCTURES/ABC/nh3.xyz
      am     1   /projappl/hvehkama/kubeckaj/Apps/JKCS2.1/JKCSx/../TOOLS/STRUCTURES/ABC/nh4.xyz
 
+.. note::
+
+   When configurational sampling needs to be done on a cluster that contains monomers not included within JKCS, then ``input.txt`` can be created from scratch. It is of course also possible to let JKCS0_copy create an input.txt file for a random system and subsequently change the necessary parameters to fit the desired system.
+   
+.. important::
+
+   When creating ``input.txt`` file through JKCS0_copy, it is likely that some parameters, like the composition, still need to be altered.
+
 ``input.txt`` is divided into four parts:
-  Supercomputer parameters
-  System charge and multiplicity
-  Composition
-  Structure of building monomers
 
 .. contents::
 
-Computer cluster parameters
----------------------------
+SUPERCOMPUTER PARAMETERS
+------------------------
 
-In this section, the parameters for running JKCS on a supercomputer are defined. JKCS communicates
-with the 3rd-party programs ABCluster, XTB, Gaussian16 and ORCA. For each of these
-programs, the following parameters need to be specified:
-  Maximum number of tasks that can run in parallel
-  Number of CPUs
-  Number of nodes
-  The requested wall time
-  The name of the supercomputer partition
-  The memory per CPU
-The -loc program is used for computing on a local computer. For almost all of them, you can use
-variables NoC and M to define the parameter as a function of ‘Number Of Combinations’ or ‘Number
-of Molecules’.
-When calling one of the JKCS scripts (e.g. JKCS3_run), the supercomputer parameters for running
-that script can also be specified as additional arguments to the script. We could, for instance,
-call ‘JKCS3_run XTB -maxtasks 20 -mem 8g’ to change the maximum number of tasks and memory
-per CPU from what is written in the input.txt file. These commands will be further explained in the
-‘Supercomputer commands’ section of this manual.
-The default table for supercomputer parameters can be changed in ~/.JKCSusersetup.txt.
+This section defines parameters for submitting JKCS to (super)computer cluster. JKCS communicates
+with 3rd-party programs that are further abreviated as: ABC = ABCluster, XTB, G16 = Gaussian16, and ORCA. For each
+program, the following parameters need to be specified:
 
-Cluster charge/multiplicity
----------------------------
+\\MAXTASKS
+  maximum number of tasks that can run in parallel. Beginners should not adjust this.
 
-This section consists of two parameters that need to be set: the total charge and total multiplicity
-of the cluster(s). The multiplicity is equal to the number of unpaired electrons plus one (M = 2S+1).
+\\CPU
+  number of CPUs
+  
+\\NODES
+  number of nodes. Beginners should leave 1.
+
+\\REQ.TIME
+  the requested walltime (expected length of calculations)
+ 
+\\PARTITION
+  the name of the cluster partition (e.g. small, large, hugemem)
+  
+\\MEMPERCPU
+  the amount of memory per CPU
+
+.. note::
+
+   For almost all of them, you can use variables "NoC" and "M" to define the parameter as a function of "Number Of (monomer) Combinations" or "(total) Number of Molecules".
+
+.. hint::
+ 
+   When calling one of the next JKCS scripts (e.g., JKCS3_run), the submission parameters for running that script can also be specified as additional arguments to the script. We could, for instance, call 
+   
+   .. code:: bash
+   
+      JKCS3_run XTB -par small -mem 8gb 
+      
+   to change the partition name and memory per CPU from what is written in the ``input.txt`` file (or actually in ``parameters.txt`` formed later for each cluster type). 
+   
+   These commands are further explained in the ‘Cluster submission’ section of this manual.
+
+.. hint::
+
+   The default table for supercomputer parameters can be changed in ~/.JKCSusersetup.txt.
+
+SYSTEM CHARGE AND MULTIPLICITY
+------------------------------
+
+This section consists of two parameters that need to be set: total charge and total multiplicity
+of the cluster(s). 
+
+.. note::
+
+   The multiplicity is equal to the number of unpaired electrons plus one (M = 2S+1).
+   
+.. hint::
+
+   If you want to study clusters of different charges, use different folders.
+
+COMPOSITION
+-----------
+
+The composition defines the number of each monomer in the desired cluster. For each cluster, the
+composition is written as n[1]_n[2]_n[3]..._n[M], where n[i] is the number of monomers of type i in the
+desired cluster. The order in which the monomers appear in this format should be the same as the
+order in which the monomers are listed in the "structure of building monomers" part of ``input.txt`` (see below). 
+If there are listed molecules "sa" and "am", the composition "1_2" equals to cluster (sa)1(am)2.
+
+When configurational sampling of multiple clusters with different compositions need
+to be done, each composition can be written on one line with a space between two separate compositions.
+For multiple clusters, some symbols can also be used to quickly define the clusters. Writing
+"1-3_(4,5)" would for instance be equivalent to "1_4 2_4 3_4 1_5 2_5 3_5".
+
+STRUCTURE OF BUILDING MONOMERS
+------------------------------
+
+This section should list the name, path and charge of all available conformers and conjugate acids/bases for all the monomers in the desired cluster. All conformers and conjugate species of the same molecule should have the same name (e.g. "sa" for cis- and trans-sulfuric acid as well as for
+the bisulfate and sulfate ion). The order of the list should be the same as the order in which the composition was written.
+
+EXAMPLE: Consider as an example that we would like to perform configurational sampling on a negative cluster
+containing two sulfuric acid molecules and one ammonia molecule. For this, we would change the total charge of the cluster to -1. The multiplicity would be left at 1. The composition would be given as "2_1". Lastly, we fill in the "structure of building monomers" part. As we have filled in "2_1" in the composition, we first list all sulfuric acid conformers and conjugate bases and then we list the ammonia structure and conjugate acid. There are two sulfuric acid conformers to take into account: cis- and trans-sulfuric acid. Ammonia has only one conformation. We take multiple conformers of monomers into account because it is not certain that the lowest energy monomer conformer is also the preferred conformation inside the cluster. Sulfuric acid has two conjugate bases: bisulfate and sulfate. Ammonia has one conjugate acid: ammonium. We consider the conjugate acids and bases because internal acid-base reactions could occur between monomers in the cluster. The paths to all the different structures related to one monomer should be listed together. 
