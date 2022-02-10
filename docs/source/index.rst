@@ -28,3 +28,10 @@ Contents
    JKQCSetupAndInstallation
    Databases
    
+.. toctree::
+   :maxdepth: 3
+   :caption: JKML
+   
+   Train
+   Evaluate
+   
