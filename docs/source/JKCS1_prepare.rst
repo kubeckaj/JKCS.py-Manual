@@ -11,6 +11,11 @@ JKCS1_prepare uses the information from ``input.txt`` to create SYS_{system} sub
    .. code:: bash
    
       JKCS1_prepare -help
+
+The folder/subfolders tree should during configurational sampling look like this: 
+
+.. image:: filesstructure.png
+      :alt: filesstructure
    
 .. hint::
 
