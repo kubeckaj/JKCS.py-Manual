@@ -13,7 +13,7 @@ If you want to also run JKCS2-4 on your local computer and not submit any jobs, 
 
 :guilabel:`-loc`
 
-Perform all tasks on computer you are now logged in.
+   Perform all tasks on computer you are now logged in.
 
 .. code:: bash
   
@@ -36,7 +36,7 @@ To submit jobs to queue the sbatch command of the following format is automatica
 
 You can overwrite the default arguments by using these commands:
 
--cpu  <integer>
+:guilabel:`-cpu  <integer>`
     number of CPUs used for one calculation. If you specify only the number of CPUs, the rest of submission arguments (e.g., walltime, partition name) are still taken from ``parameters.txt``
    
 .. code:: bash
