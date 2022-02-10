@@ -12,7 +12,7 @@ Run locally
 If you want to also run JKCS2-4 on your local computer and not submit any jobs, you can use:
 
 \-loc
-   Perform all tasks on computer you are now logged in.
+     Perform all tasks on computer you are now logged in.
 
 .. code:: bash
   
@@ -43,10 +43,10 @@ You can overwrite the default arguments by using these commands:
    JKCS3_run -p G16 -rf XTB -nf DFT_opt -m "# wb97xd 6-31++g** opt" -cpu 8   
 
 \-par,\-partition <string>
-   partition (queue) name (e.g., test, short, longrun, or hugemem). You should see all partitions by typing the command: ``sinfo``
+     partition (queue) name (e.g., test, short, longrun, or hugemem). You should see all partitions by typing the command: ``sinfo``
 
 \-time <time_format>
-   requested walltime (e.g., 72:00:00, 1-00:00:00 or 10:00). If you need to submit a simple/fast test on the test partition, run:
+     requested walltime (e.g., 72:00:00, 1-00:00:00 or 10:00). If you need to submit a simple/fast test on the test partition, run:
    
 .. code:: bash
   
@@ -54,10 +54,10 @@ You can overwrite the default arguments by using these commands:
    JKCS4_collect ABC -par test -time 10:00
 
 \-mem,\-memory <memory_string_format>
-  size of memory allocated per CPU [e.g., 4000mb or 32gb]
+    size of memory allocated per CPU [e.g., 4000mb or 32gb]
 
 \-jpt <integer>  
-   number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 Gaussian optimizations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
+     number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 Gaussian optimizations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
 
 .. code:: bash
   
@@ -71,10 +71,10 @@ If you have many conformer combinations, you can reduce the configurational sear
    JKCS3_run -jpt 10
    
 \-taks,\-maxtasks <integer>
-   max. number of tasks to be submitted (per cluster subfolder). I am worried that people sometimes do not adequately calculate how many jobs they could submit with one command. Therefore, I did restrict your submission to max 100 jobs. You can easily raise this threshold by this argument. 
+     max. number of tasks to be submitted (per cluster subfolder). I am worried that people sometimes do not adequately calculate how many jobs they could submit with one command. Therefore, I did restrict your submission to max 100 jobs. You can easily raise this threshold by this argument. 
 
 \-N,\-nodes <integer>
-   number of nodes. It is by default 1. However, the functionality of this argument was not properly tested yet. See the greasy-multitask section on this page for more details.
+     number of nodes. It is by default 1. However, the functionality of this argument was not properly tested yet. See the greasy-multitask section on this page for more details.
 
 .. note::
 
@@ -86,13 +86,13 @@ Greasy (multinodal) multitask single job
 There is an option to submit only single job that contains several tasks that will run parallely. It is greasy (=dirty) way of using multinodal clusters where submission of single jobs is not allowed or maximal number of submitted jobs is limitted. Since the submitted job has to wait for all tasks to be finished (also the slowest one), it leads to waste of computational resources where CPUs are not used. Hence, it is called greasy.
 
 \-greasy
-   this will activate greasy mode
+     this will activate greasy mode
 
 \-con,\-cores_on_node <integer>
-   number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo`` command to see how much cores is on a partition-node.
+     number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo`` command to see how much cores is on a partition-node.
 
 \-N,\-nodes <integer>
-   number of nodes. If the number of tasks requires more nodes, you should set it. If you set more than necessary, then the maximal necessary number of nodes will be used (so feel free to e.g. set -nodes 20 if you do not want to worry about that). Remember that there is also some maximal number of nodes per cluster partition.
+     number of nodes. If the number of tasks requires more nodes, you should set it. If you set more than necessary, then the maximal necessary number of nodes will be used (so feel free to e.g. set -nodes 20 if you do not want to worry about that). Remember that there is also some maximal number of nodes per cluster partition.
    
 OK, let us see some examples. 
 What about 32 Gaussian calculations each using 8 CPUs while submitting to the "medium" partition with 128 cores per node:
