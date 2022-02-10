@@ -37,18 +37,14 @@ To submit jobs to queue the sbatch command of the following format is automatica
 You can overwrite the default arguments by using these commands:
 
 -cpu  <integer>
-"""""""""""""""
-
-number of CPUs used for one calculation. If you specify only the number of CPUs, the rest of submission arguments (e.g., walltime, partition name) are still taken from ``parameters.txt``
+    number of CPUs used for one calculation. If you specify only the number of CPUs, the rest of submission arguments (e.g., walltime, partition name) are still taken from ``parameters.txt``
    
 .. code:: bash
   
    JKCS3_run -p G16 -rf XTB -nf DFT_opt -m "# wb97xd 6-31++g** opt" -cpu 8   
 
 -par, -partition <string>
-"""""""""""""""""""""""""
-
-partition (queue) name (e.g., test, short, longrun, or hugemem). You should see all partitions by typing the command: ``sinfo``
+    partition (queue) name (e.g., test, short, longrun, or hugemem). You should see all partitions by typing the command: ``sinfo``
 
 -time <time_format>
     requested walltime (e.g., 72:00:00, 1-00:00:00 or 10:00). If you need to submit a simple/fast test on the test partition, run:
