@@ -6,6 +6,14 @@ JKCS1_prepare uses the information from ``input.txt`` to create SYS_{system} sub
 
 .. hint::
 
+   For help use:
+   
+   .. code:: bash
+   
+      JKCS1_prepare -help
+   
+.. hint::
+
    Each subsequent script (e.g. JKCS2_explore or JKCS3_run) can either be called from the working directory or from one of the SYS_{system} subfolders. When called from a subfolder, it is only applied to that specific subfolder. When called from the working directory, the script is applied to all subfolders. However, you can also specify to which subfolder you want to apply scripts. See examples:
    
    .. code:: bash
