@@ -91,7 +91,7 @@ There is an option to submit only single job that contains several tasks that wi
 :guilabel:`-con, -cores_on_node <integer>`
     number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo`` command to see how much cores is on a partition-node.
 
-:guilabel:`-N, -nodes <integer>
+:guilabel:`-N, -nodes <integer>`
     number of nodes. If the number of tasks requires more nodes, you should set it. If you set more than necessary, then the maximal necessary number of nodes will be used (so feel free to e.g. set -nodes 20 if you do not want to worry about that). Remember that there is also some maximal number of nodes per cluster partition.
    
 OK, let us see some examples. 
