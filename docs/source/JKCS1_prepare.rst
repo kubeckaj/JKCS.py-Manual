@@ -46,4 +46,34 @@ EXAMPLE: Calling JKCS1_prepare for an illustrative negatively charged cluster of
 
 You can easily verify that these clusters all have total charge −1 and that these are all the combinations that can be made for this specific composition and total charge.
    
+:guilabel:`-s, -sample <integer>`
+    sample from all monomer combinations. In the case of many combinations, you can pick just random combinations (helpful when molecules with a lot of conformers are used). For instance:
+    
+.. code:: bash
+
+   JKCS1_prepare -s 100
+   JKCS1_prepare -s NoC/2
    
+.. note::
+
+   You can use variables "NoC" and "M" to define the parameter as a function of "Number Of (monomer) Combinations" or "(total) number of Molecules".
+   
+However, I recommend lowering the simulation parameters and using all combinations. In the case of 200 conformer combinations, the following two options would lead to a similar computational cost, but the second one would lead to a more thorough configurational search:
+
+.. code:: 
+
+   # REDUCING CONFORMER COMBINATIONS:
+   JKCS1_prepare -s 100
+   JKCS2_explore -pop 100 -gen 200 -lm 500
+   JKCS3_run
+   
+   # REDUCING SIMULATION LENGTH (200 NoC)
+   # -jpt 2 = each submitted job performs 2 simulations/calculations
+   JKCS1_prepare    
+   JKCS2_explore -pop 100/2 -gen 200/2 -lm 500/2 -jpt 2
+   JKCS3_run -jpt 2
+
+:guilabel:`-o, -overwrite`
+    overwrites ``parameters.txt`` in already existing subfolders. Not important for beginners.
+
+
