@@ -19,6 +19,7 @@ Contents
    Inputfile
    JKCS0_copy
    JKCS1_prepare
+   JKCS2_explore
    ClusterSubmission
    
 .. toctree::
