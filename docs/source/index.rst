@@ -20,6 +20,7 @@ Contents
    JKCS0_copy
    JKCS1_prepare
    JKCS2_explore
+   JKCS3_run
    ClusterSubmission
    
 .. toctree::
