@@ -45,7 +45,10 @@ EXAMPLE: Calling JKCS1_prepare for an illustrative negatively charged cluster of
 • 1_0_1_0_1_0 (NH3)1(trans-H2SO4)1(HSO4−)1
 
 You can easily verify that these clusters all have total charge −1 and that these are all the combinations that can be made for this specific composition and total charge.
-   
+
+Arguments
+---------
+
 :guilabel:`-s, -sample <integer>`
     sample from all monomer combinations. In the case of many combinations, you can pick just random combinations (helpful when molecules with a lot of conformers are used). For instance:
     
