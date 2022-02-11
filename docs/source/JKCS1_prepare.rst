@@ -30,7 +30,7 @@ The folder/subfolders tree should during configurational sampling look like this
       
    if you want to peform specific command (or sequence of commands) in each subfolder, use:
    
-   .. code:: bash
+   .. code:: 
    
       JKfor head -n 3 resultsXTB.dat
       JKfor "head -n 1 resultsDFT_freq.dat > ../all_results.dat"
