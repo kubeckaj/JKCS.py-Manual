@@ -93,7 +93,7 @@ the amount of memory per CPU
 
 .. note::
 
-   For almost all of them, you can use variables "NoC" and "M" to define the parameter as a function of "Number Of (monomer) Combinations" or "(total) Number of Molecules".
+   For almost all of them, you can use variables "NoC" and "M" to define the parameter as a function of "Number Of (monomer) Combinations" or "(total) number of Molecules".
 
 .. hint::
  
