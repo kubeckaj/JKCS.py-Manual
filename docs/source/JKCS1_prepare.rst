@@ -16,6 +16,8 @@ The folder/subfolders tree should during configurational sampling look like this
 
 .. image:: filesstructure.png
       :alt: filesstructure
+      :width: 200
+      :align: center
    
 .. hint::
 
