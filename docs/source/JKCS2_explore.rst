@@ -20,7 +20,7 @@ in any local minimum for too long. At the end of all the optimization/generation
    
       JKCS2_explore -help
       
-You can run a test of a sort simulation (gen = 5) with very small population (pop = 5) on local (or login) computer. Save a few lowest minima (lm 3) and examine the subfolders. Example code:
+You can run a test of a sort simulation (gen = 5) with a very small population (pop = 5) on local (or login) computer. Save a few lowest minima (lm 3) and examine the subfolders. Example code:
 
 .. code:: 
 
@@ -35,12 +35,42 @@ You can run a test of a sort simulation (gen = 5) with very small population (po
    ls
    molden 1sa1am-100010_1_1.xyz
 
-For proper configurational sampling, you should not run simulations shorter than 100 generations. Use also adeqate size of population and save enough 
-of local minima. Remember that configurational spaces increases with cluster size, and thus you should use greater parameters for larger clusters.
+You should not run simulations shorter than 100 generations for proper configurational sampling. Remember that configurational spaces increase with cluster size, and thus you should use greater parameters for larger clusters. Use also adequate size of population and save enough 
+of local minima.
 
 .. code:: 
 
    JKCS2_explore -gen 200 -pop 1000 -lm 3000
    JKCS2_explore -gen 100 -pop 300*M -lm 3000/NoC
    
+.. note::
 
+   You can use variables "NoC" and "M" to define the parameter as a function of "Number Of (monomer) Combinations" or "(total) number of Molecules".
+
+.. hint::
+
+   Some variables are by default defined as functions of the ‘number of Molecules’ (M) and the ‘Number of Combinations’ (NoC). This is particularly useful when working with several clusters. Smaller cluster do not need such extensive exploration as larger clusters. M and NoC allow for the scaling of the exploration according to the cluster size and complexity. You can use these symbols as well to define arguments.
+   
+   It is important to note that when a lot of conformers are taken into account for a certain monomer, NoC can become very large. As a result, M/NoC becomes very small. Therefore, always be mindful of the result that using M and NoC might have for the exploration of all your studied systems. When dealing with large NoC, we believe that better performance of configurational sampling is reached when doing a small exploration on all combinations, rather than an exhaustive exploration of only a few selected combinations.
+   
+Arguments
+---------
+   
+:guilabel:`-pop, -i, -init <integer>`
+    population size (or also number of initial guesses). The size of the colony that evolves over generations. [default = 300*M]
+    
+:guilabel:`-g, -gen <integer>`
+    number of (ABC) generations (loops). [default = 100]
+    
+:guilabel:`-l, -lm <integer>`
+    (maximal) number of the lowest local minima to be saved. [default = 300*M/NoC]
+    
+:guilabel:`-s, -sc <integer>`
+    lifetime = maximum generations, i.e. number of loops before replacing unchanged structure. The best is to keep this parameter as 2-5. [default = 4]
+    
+:guilabel:`-box <float|integer>`
+    simulation box size. When you use small or large (compared to sulfuric acid) molecules, you should modify the box size otherwise the resultant clusters could contain evaporated molecules or the configuration exploration would not be thourough enough. [default = 7+M]
+    
+.. code:: 
+
+   JKCS2_explore -gen 200 -pop 300 -lm 1000 -sc 3 -box 2+M
