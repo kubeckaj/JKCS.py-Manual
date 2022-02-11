@@ -55,7 +55,16 @@ of local minima.
    
 Arguments
 ---------
-   
+
+:guilabel:`-JKQC`
+    after the run, the structures are pickled into a single file (``database.pkl``, see JKQC for more details). This saves memory and significantly reduces number of files. The subsequent commands should then use the -JKQC command as well. Example:
+    
+.. code:: 
+
+   JKCS2_explore -gen 200 -pop 1000 -lm 3000 -JKQC
+   JKCS3_run -JKQC
+   JKCS4_collect XTB
+
 :guilabel:`-pop, -i, -init <integer>`
     population size (or also number of initial guesses). The size of the colony that evolves over generations. [default = 300*M]
     
