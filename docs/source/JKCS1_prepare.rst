@@ -36,7 +36,7 @@ The folder/subfolders tree should during configurational sampling look like this
       JKfor "head -n 1 resultsDFT_freq.dat > ../all_results.dat"
       JKfor 'head -n 50 resultsXTB.dat > resultsXTB_FILTERED.dat; JKCS3_run -p XTB -rf XTB -nf XTB_freq -m "--hess --gfn 1"'
       
-EXAMPLE: Calling JKCS1_prepare for an illustrative negatively charged cluster of 1 ammonia and 2 sulfuric acid molecules, one folder SYS_2am_1sa would be created. This folder would contain ``parameters.txt`` file where 5 possible cluster combinations are written:
+EXAMPLE: Calling JKCS1_prepare for an negatively charged cluster of 1 ammonia and 2 sulfuric acid molecules, ``SYS_2am_1sa`` folder would be created. This folder would contain ``parameters.txt`` where 5 possible cluster combinations are written:
 
 • 0_1_0_0_2_0 (NH4+)1(HSO4-)2
 • 0_1_0_1_0_1 (NH4+)1(cis-H2SO4)1(SO4−-)1
