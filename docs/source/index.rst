@@ -21,6 +21,7 @@ Contents
    JKCS1_prepare
    JKCS2_explore
    JKCS3_run
+   JKCS4_collect
    ClusterSubmission
    
 .. toctree::
