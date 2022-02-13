@@ -69,6 +69,27 @@ Moreover, all XYZ structures are also printed to ``movieXTB.xyz``. Users can the
 
    molden movieXTB.xyz
 
+Arguments
+---------
+
+:guilabel:`<string>`
+    name of the folder which should be analysed (e.g. XTB)
+
+:guilabel:`-JKQC`
+    (if not yet) the structures are additionaly pickled into a single file (``collectionXXX.pkl``, see JKQC for more details). 
+    
+:guilabel:`-JKQCclean`
+    same as :guilabel:`-JKQC` + removes unnecessary files (.xyz|.log|.out|.com|.cmd). This saves memory and significantly reduces number of files.
+    
+:guilabel:`-JKQCcleanfull`
+    same as :guilabel:`-JKQC` + completely removes analysed folder. This saves memory and significantly reduces number of files.
+
+:guilabel:`-dip`
+    additionaly collects dipole moments
+    
+:guilabel:`-gibbs`
+    additionaly collects Gibbs free energies
+
 As JKCS4_collect uses JKQCpickle to collect the properties of all output files, the
 same options can be used to request specific properties to be retrieved and written in ``collectionXXX.txt`` and 
 ``resultXXX.dat`` files. See more details in JKQC section of this manual. Here are only few interesting examples:
