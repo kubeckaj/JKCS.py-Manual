@@ -89,23 +89,23 @@ There is an option to submit only single job that contains several tasks that wi
     this will activate greasy mode
 
 :guilabel:`-con, -cores_on_node <integer>`
-    number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo`` command to see how much cores is on a partition-node.
+    number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo -N -l`` command to see how much cores is on a partition-node.
 
 :guilabel:`-N, -nodes <integer>`
     number of nodes. If the number of tasks requires more nodes, you should set it. If you set more than necessary, then the maximal necessary number of nodes will be used (so feel free to e.g. set -nodes 20 if you do not want to worry about that). Remember that there is also some maximal number of nodes per cluster partition.
    
 OK, let us see some examples. 
-What about 32 Gaussian calculations each using 8 CPUs while submitting to the "medium" partition with 128 cores per node:
+What about 64 Gaussian calculations each using 8 CPUs while submitting to the "medium" partition with 256 cores per node:
 
 .. code:: bash
    
-   JKCS3_run -p G16 -rf XTB -n DFT -m "# wb97xd 6-31++g** opt" -con 128 -cpu 8 -nodes 2 -greasy -par medium -time 12:00:00
+   JKCS3_run -p G16 -rf XTB -n DFT -m "# wb97xd 6-31++g** opt" -con 256 -cpu 8 -nodes 2 -greasy -par medium -time 12:00:00
    
-I can also submit more jobs per each task. For instance, one greasy-worker will do 2 calculation jobs. I will run 64 calculations which will still fit to 2 nodes (2nodes * 128cores * 2jpt / 8cpu = 64jobs). I will increase the walltime though
+I can also submit more jobs per each task. For instance, one greasy-worker will do 2 calculation jobs. I will run 128 calculations which will still fit to 2 nodes (2nodes * 256cores * 2jpt / 8cpu = 128jobs). I will increase the walltime though
 
 .. code:: bash
    
-   JKCS3_run -p G16 -rf XTB -n DFT -m "# wb97xd 6-31++g** opt" -con 128 -cpu 8 -nodes 2 -greasy -par medium -time 24:00:00 -jpt 2
+   JKCS3_run -p G16 -rf XTB -n DFT -m "# wb97xd 6-31++g** opt" -con 256 -cpu 8 -nodes 2 -greasy -par medium -time 24:00:00 -jpt 2
 
 .. note::
 
