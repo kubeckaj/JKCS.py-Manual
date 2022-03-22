@@ -23,23 +23,23 @@ Collect data from .log (and .xyz, .out) files and pickle them into a database:
 
 .. code:: bash
    
-   python JKQC.py *.log -out local_database.pkl
+   python JKQCpickle.py *.log -out local_database.pkl
    
 Add data into database:
 
 .. code:: bash
    
-   python JKQC.py *.log -in local_database.pkl -out local_database.pkl
+   python JKQCpickle.py *.log -in local_database.pkl -out local_database.pkl
    
 Connect two databases:
 
 .. code:: bash
    
-   python JKQC.py -in database1.pkl -in database2.pkl -out joined_database.pkl
-   python JKQC.py database1.pkl database2.pkl -out joined_database.pkl
+   python JKQCpickle.py -in database1.pkl -in database2.pkl -out joined_database.pkl
+   python JKQCpickle.py database1.pkl database2.pkl -out joined_database.pkl
    
 Extract part of a database 
 
 .. code:: bash
    
-   python JKQC.py -in mydatabase.pkl -extract 1sa2w -out 1sa2w_database.pkl
+   python JKQCpickle.py -in mydatabase.pkl -extract 1sa2w -out 1sa2w_database.pkl
