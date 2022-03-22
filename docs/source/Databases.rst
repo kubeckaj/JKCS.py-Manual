@@ -1,5 +1,0 @@
-=========
-Databases
-=========
-
-Something about databases
