@@ -26,7 +26,8 @@ JKCS = Jammy Key for Configurational Sampling
    :caption: JKQC
    
    JKQCSetupAndInstallation
-   Databases
+   Pickle
+   DatabaseManipulation
    
 .. toctree::
    :maxdepth: 3
