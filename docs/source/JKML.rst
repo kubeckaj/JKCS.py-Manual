@@ -21,7 +21,9 @@ or on difference between high level and low theory (both calculated for the same
 
 .. math::
    \Delta E^{DFT} = E_{cluster}^{DFT} - \sum E_{monomer}^{DFT}
+.. math::
    \Delta E^{XTB} = E_{cluster}^{XTB} - \sum E_{monomer}^{XTB}
+.. math::
    \Delta\Delta E^{DFT|XTB} = \Delta E^{DFT} - \Delta E^{XTB}
 
 The delta-ML does perform significantly better and low level theory calculations are usually cheap to perform.
