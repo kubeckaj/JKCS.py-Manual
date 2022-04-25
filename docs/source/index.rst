@@ -33,6 +33,5 @@ JKCS = Jammy Key for Configurational Sampling
    :maxdepth: 3
    :caption: JKML
    
-   Train
-   Evaluate
+   JKML
    
