@@ -12,7 +12,11 @@ Clone the JKCS from github, (modify setup [see the hint below first]), and run `
    git clone https://github.com/kubeckaj/JKCS2.1.git
    cd JKCS2.1
    #vim setup.sh
-   sh setup.sh
+   sh setup.sh    #-qml  
+
+.. note::
+   
+   :guilabel:`-qml` will install all libraries for quantum machine learning
    
 .. hint::
  
@@ -20,17 +24,18 @@ Clone the JKCS from github, (modify setup [see the hint below first]), and run `
    
    .. code:: bash
    
-      sh setup.sh         #for Puhti users
+      sh setup.sh puhti   #for Puhti users
       sh setup.sh grendel #for Grendel users
       sh setup.sh mahti   #for Mahti users
       
 .. note::
 
-   If you need to resetup the JKCS use the :guilabel:`-r` argument, e.g.:
+   If you need to resetup the JKCS use :guilabel:`-r` or :guilabel:`-r2`, e.g.:
    
    .. code:: bash
    
-      sh setup.sh -r grendel
+      sh setup.sh -r grendel   #reinstall python lins and rewrites ~/.JKCSusersetup.txt
+      sh setup.sh -r2 grendel  #only rewrites ~/.JKCSusersetup.txt
       
 If all paths are well setup in ``~/.JKCSusersetup.txt`` can be checked by:
 
