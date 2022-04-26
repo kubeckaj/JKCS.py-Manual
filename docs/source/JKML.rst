@@ -37,7 +37,15 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
    1sa.xyz 1w.xyz 1sa1w.xyz 1sa1w-1.xyz 1sa1w-2_32.xyz
    ....
    $USER: JKgaussstat *.log -out full_DFT.pkl
+
+.. note::
+
+   It is assumed that XTB and G16 outputs have extension `.log`. Generally, ORCA output is assumed to have `.out` extension that you can combine it as SP calculation with G16. However, for JKML, please change the extension to `.log` and use :guilabel:`-orcaext log` for ``JKgaussstat``, e.g.:
    
+   .. code::
+      
+      JKgaussstat *.log -orcaext log -out full_DFT.pkl
+
 .. hint::
 
    It is strongly recommended to separate monomers into a single file. Additionally, JKQCpickle (can be called by JKgaussstat command) can be used to prepare other pickled files, e.g.:
@@ -59,7 +67,7 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
 
 .. hint::
 
-   See ``Cluster submission`` (under ``JKCS``) to undertand how to tune cluster parameters.
+   See ``Cluster submission`` (under ``JKCS``) to understand how to tune cluster parameters.
 
 .. note::
  
