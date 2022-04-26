@@ -93,7 +93,7 @@ INFO
   
 QC-data
 -------
-:guilabel:``--el,--elec`
+:guilabel:`--el,--elec`
   electronic energy (total energy in the case of XTB and ABCluster)
 :guilabel:`--g,--gibbs`
   Gibbs free energy (**NOT YET** adjustable by QC-corrections)
