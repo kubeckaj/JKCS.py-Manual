@@ -6,50 +6,55 @@ You can call JKQCpickle.py in one of the following format:
 
 .. code:: bash
 
-   python JKQCpickle.py <Files> <Database> <Options/Parameters> 
+   JKpython
+   python <FULL-PATH>JKQCpickle.py <Files> <Database> <Options/Parameters> 
+   
+   JKpython
+   JKQCpickle <Files> <Database> <Options/Parameters> 
+   
    JKgaussstat <Files> <Database> <Options/Parameters> 
 
 Print (name and) electronic energy from files/database:
 
 .. code:: bash
    
-   python JKQCpickle.py *.log -b -el
-   python JKQCpickle.py database.pkl -b -el //significantly faster
+   JKgaussstat *.log -b -el
+   JKgaussstat database.pkl -b -el //significantly faster
    
 Extract (name and) electronic energy for a specific cluster(s):
 
 .. code:: bash
    
-   python JKQCpickle.py -in mydatabase.pkl -extract 1sa2w -b -el
-   python JKQCpickle.py -in mydatabase.pkl -extract 3sa,1sa0-10w -b -el
+   JKgaussstat -in mydatabase.pkl -extract 1sa2w -b -el
+   JKgaussstat -in mydatabase.pkl -extract 3sa,1sa0-10w -b -el
 
 Extract (name and) gibbs free energy corrected for SP DLPNO-CCSD(T) energy (Orca) !!! NOT FUNCTIONAL YET !!!:
 
 .. code:: bash
    
-   python JKQCpickle.py -in mydatabase.pkl -b -GD
+   JKgaussstat -in mydatabase.pkl -b -GD
    
 Extract (name and) enthalpy and entropy:
 
 .. code:: bash
    
-   python JKQCpickle.py -in mydatabase.pkl -b -h -s
+   JKgaussstat -in mydatabase.pkl -b -h -s
    
 Calculate formation Gibbs free energy (global minimum approximation) !!! NOT FUNCTIONAL YET !!!:
 
 .. code:: bash
    
-   python JKQCpickle.py -in mydatabase.pkl -extract 1sa,2sa -b -GD -formation
+   JKgaussstat -in mydatabase.pkl -extract 1sa,2sa -b -GD -formation
    
 
 Database manipulation
 ---------------------
  
-  <Files> 
+:guilabel:`<Files>`  
   
 input files can be any .log, .out, and .xyz files, or
 
---in database.pkl
+:guilabel:`--in database.pkl`
   input .pkl database (the --in command is actually not necessary)
 
 .. list-table:: Input data
@@ -67,7 +72,7 @@ input files can be any .log, .out, and .xyz files, or
     * - COMBINED
       - FILES and DATABASES combined 
 
---out database.pkl
+:guilabel:`--out database.pkl`
   output .pkl database (the --out command is necessary)
   
 .. list-table:: Output database
@@ -83,23 +88,23 @@ input files can be any .log, .out, and .xyz files, or
 
 INFO
 ----
---b,--basename
+:guilabel:`--b,--basename`
   base name of the given files (e.g. for \data\1sa1am.log -> 1sa1am)
   
 QC-data
 -------
---el,--elec
+:guilabel:``--el,--elec`
   electronic energy (total energy in the case of XTB and ABCluster)
---g,--gibbs
+:guilabel:`--g,--gibbs`
   Gibbs free energy (**NOT YET** adjustable by QC-corrections)
   
 QC-corrections
 --------------
---t,--temp *<real>*
+:guilabel:`--t,--temp *<real>*`
   temperature
 
-TO BE FILLED LATER
+--- TO BE FILLED LATER --- For now you can see the rest of documentation here:
 
 .. code:: bash
 
-    python JKQCpickle.py -help
+    JKgaussstat -help
