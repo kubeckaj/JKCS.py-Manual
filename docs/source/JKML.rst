@@ -28,7 +28,7 @@ or on difference between high level and low theory (both calculated for the same
 
 The delta-ML does perform significantly better and low level theory calculations are usually cheap to perform.
 
-The structures should be provided in pickled database .pkl (see JKQCpickle manual). The file naming must have specific format. See examples:
+The structures should be provided in a pickled database.pkl file (see ``JKQCpickle`` manual). The file naming must have specific format (you can try, i.e. with caution, to use ``JKname`` to rename your files). See examples:
 
 .. code::
    
@@ -40,7 +40,7 @@ The structures should be provided in pickled database .pkl (see JKQCpickle manua
    
 .. hint::
 
-   It is strongly recommended to separate monomers into a single file. Additionally, JKQCpickle (can be called by JKgaussstat command) can be used prepare other pickled files, e.g.:
+   It is strongly recommended to separate monomers into a single file. Additionally, JKQCpickle (can be called by JKgaussstat command) can be used to prepare other pickled files, e.g.:
    
    .. code::
    
@@ -53,8 +53,9 @@ The structures should be provided in pickled database .pkl (see JKQCpickle manua
 .. code::
 
    JKML -help
-   JKML -method direct -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl -loc
-   JKML -train train_DFT.pkl train_XTB.pkl -test test_DFT.pkl test_XTB.pkl -monomers monomers_DFT.pkl monomers_XTB.pkl -method delta -par test -time 10:00 -mem 5GB -cpu 2
+   JKML -loc -method direct -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl
+   JKML -par test -time 10:00 -mem 5GB -cpu 2 -method direct -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl 
+   JKML -loc -print 2 -train train_DFT.pkl train_XTB.pkl -test test_DFT.pkl test_XTB.pkl -monomers monomers_DFT.pkl monomers_XTB.pkl
 
 .. hint::
 
