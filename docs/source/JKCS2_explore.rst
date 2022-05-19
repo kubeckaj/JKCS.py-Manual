@@ -87,7 +87,7 @@ Arguments
 
    JKCS2_explore -gen 200 -pop 300 -lm 1000 -sc 3 -box 2+M
    
-The coupling between ABC and XTB
+Coupling between ABC and XTB
 --------------------------------
 
 This method is usefull for running flexible molecules. Note that in `input.txt` you should point to pure xyz (not the abc-xyz). You can create example input file also with JKCS0_copy
@@ -119,7 +119,7 @@ ABC_XTB arguments
     simulation box size from -X to X. When you use small or large (compared to sulfuric acid) molecules, you should modify the box size otherwise the resultant clusters could contain evaporated molecules or the configuration exploration would not be thourough enough. [default = 7+M]
     
 :guilabel:`-repeat <integer>`
-    each simulation is repeated (in parallel) X-times
+    each simulation is repeated (in parallel) X-times [def=1]
     
 :guilabel:`-gfn <integer>`
     defines GFN1-xTB or GFN2-xTB [def=1]
