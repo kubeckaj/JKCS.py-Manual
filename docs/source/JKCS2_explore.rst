@@ -79,7 +79,47 @@ Arguments
     
 :guilabel:`-box <float|integer>`
     simulation box size. When you use small or large (compared to sulfuric acid) molecules, you should modify the box size otherwise the resultant clusters could contain evaporated molecules or the configuration exploration would not be thourough enough. [default = 7+M]
-    
+
+:guilabel:`-repeat <integer>`
+    each simulation is repeated (in parallel) X-times
+
 .. code:: 
 
    JKCS2_explore -gen 200 -pop 300 -lm 1000 -sc 3 -box 2+M
+   
+The coupling between ABC and XTB
+--------------------------------
+
+This method is usefull for running flexible molecules. Note that in `input.txt` you should point to pure xyz (not the abc-xyz). You can create example input file also with JKCS0_copy
+
+.. code:: 
+   
+   JKCS0_copy -helpxyz
+   JKCS0_copy XYZna XYZbuoh
+   <modify input.txt>
+   JKCS1_prepare
+   
+Ok, time to run JKCS2_explore with the ABC_XTB coupling:
+
+.. code::
+
+   JKCS2_explore -helpxtb
+   JKCS2_explore -abcxtb -gen 2000 -repeat 2 -cpu 8
+   
+ABC_XTB arguments
+-----------------
+
+:guilabel:`-abcxtb`
+    switch to the ABC_XTB version
+
+:guilabel:`-g, -gen <integer>`
+    number of (ABC) generations (loops). [default = 100] (i.e. number XTB runs)
+    
+:guilabel:`-box <float|integer>`
+    simulation box size from -X to X. When you use small or large (compared to sulfuric acid) molecules, you should modify the box size otherwise the resultant clusters could contain evaporated molecules or the configuration exploration would not be thourough enough. [default = 7+M]
+    
+:guilabel:`-repeat <integer>`
+    each simulation is repeated (in parallel) X-times
+    
+:guilabel:`-gfn <integer>`
+    defines GFN1-xTB or GFN2-xTB [def=1]
