@@ -1,12 +1,15 @@
 .. image:: Webp.net-resizeimage.png
       :alt: JKCS
-      :width: 200
+      :width: 600
       
 ==============================
 Welcome to JKCS documentation!
 ==============================
 
-JKCS = Jammy Key for Configurational Sampling
+This is the online documentation for JKCS = Jammy Key for Configurational Sampling.
+
+📚 `JKCS <https://github.com/kubeckaj/JKCS2.1/>`_
+    The program can be found here
 
 .. toctree::
    :maxdepth: 3
