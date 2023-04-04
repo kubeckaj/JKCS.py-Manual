@@ -10,9 +10,10 @@ JKCS = Jammy Key for Configurational Sampling
 .. toctree::
    :maxdepth: 3
    :caption: JKCS
+   
    JKCSSetupAndInstallation
    JKCS0_copy
-   Inputfile
+      Inputfile
    JKCS1_prepare
    JKCS2_explore
    JKCS3_run
