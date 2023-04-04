@@ -12,8 +12,8 @@ JKCS = Jammy Key for Configurational Sampling
    :caption: JKCS
    
    JKCSSetupAndInstallation
+   Inputfile
    JKCS0_copy
-      Inputfile
    JKCS1_prepare
    JKCS2_explore
    JKCS3_run
