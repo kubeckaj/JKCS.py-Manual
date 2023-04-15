@@ -2,6 +2,18 @@
 Setup & Installation
 ====================
 
+.. note::
+   
+   In order to install and use JKQC and JKML you need to install JKCS!
+
+Requirements
+------------
+
+* git
+* Python >3.8 but <4.0
+
+Depending on your need other programs are required too (e.g. ABCluster, XTB, Gaussian, ORCA)
+
 JKCS
 ----
 
@@ -11,57 +23,54 @@ Clone the JKCS from github, (modify setup [see the hint below first]), and run `
 
    git clone https://github.com/kubeckaj/JKCS2.1.git
    cd JKCS2.1
-   #vim setup.sh
-   sh setup.sh    #-qml  
+   sh setup.sh -help
+   sh setup.sh -r   
 
-.. note::
+The argument :guilabel:`-r` will everytime rewrite your ``~/.JKCSusersetup.txt`` if it already exists. Once you setup all paths in ``~/.JKCSusersetup.txt``, you can check if everything what you need is set properly by:
+
+.. code:: bash
+
+   sh test.sh
    
-   :guilabel:`-qml` will install all libraries for quantum machine learning
+If something fails, you must modify ``~/.JKCSusersetup.txt`` in order to use the JKCS features.
    
 .. hint::
  
-   Users of some clusters (Puhti,Mahti,Grendel) can use predefined paths and python modules by typing:
+   Users of some clusters (Puhti, Mahti, Grendel) can use predefined paths and python modules by typing:
    
    .. code:: bash
    
-      sh setup.sh puhti   #for Puhti users
-      sh setup.sh grendel #for Grendel users
-      sh setup.sh mahti   #for Mahti users
-      
+      sh setup.sh puhti -r   #for Puhti users
+      sh setup.sh grendel -r #for Grendel users
+      sh setup.sh mahti -r   #for Mahti users
+     
 .. note::
 
    If you need to resetup the JKCS use :guilabel:`-r` or :guilabel:`-r2`, e.g.:
    
    .. code:: bash
    
-      sh setup.sh -r grendel   #reinstall python lins and rewrites ~/.JKCSusersetup.txt
+      sh setup.sh -r grendel   #reinstall all python libs and rewrites ~/.JKCSusersetup.txt
       sh setup.sh -r2 grendel  #only rewrites ~/.JKCSusersetup.txt
-      
-If all paths are well setup in ``~/.JKCSusersetup.txt`` can be checked by:
 
-.. code:: bash
+JKQC
+----
 
-   sh test.sh
+All features are automatically installed with JKCS, yeay :-D
+
+JKML
+----
+
+In order to use JKML, you must install some Python packages:
+
+.. note::
    
-If something fails, you must modify ``~/.JKCSusersetup.txt`` in order to use the JKCS feature.
-
-When test is completed you go to a working directory and start your first configurational sampling test, e.g.:
-
-.. code:: bash
-
-   cd
-   mkdir TEST
-   cd TEST
-   JKCS0_copy sa w
-   JKCS1_prepare sa w
-   JKCS2_explore -pop 5 -gen 5 -lm 3 -loc
-   JKCS4_collect ABC
-   cd SYS_1sa_1w
-   cat resultsABC.dat
-   molden movieABC.xyz
+   :guilabel:`-qml` will install all libraries for quantum machine learning (QML)
+   :guilabel:`-nn` will install all libraries for neural network modelling (SchNetPack)
+   :guilabel:`-descriptors` will install dscribe library for some JKML extra features (:guilabel:`-sampleeach`)
    
-For more details see the other sections of JKCS manual.
-For help with individual programs continue reading on this page.
+Using 3rd-party programs
+========================
 
 ABCluster
 ---------
