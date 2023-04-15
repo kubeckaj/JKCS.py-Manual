@@ -28,9 +28,14 @@ Manual structure
 
 .. toctree::
    :maxdepth: 3
-   :caption: JKCS
+   :caption: GET STARTED
    
    JKCSSetupAndInstallation
+
+.. toctree::
+   :maxdepth: 3
+   :caption: JKCS
+   
    Inputfile
    JKCS0_copy
    JKCS1_prepare
