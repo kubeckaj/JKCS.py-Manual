@@ -66,14 +66,17 @@ In order to use JKML, you must install some Python packages:
 .. note::
    
    :guilabel:`-qml` will install all libraries for quantum machine learning (QML)
+   
    :guilabel:`-nn` will install all libraries for neural network modelling (SchNetPack)
+   
    :guilabel:`-descriptors` will install dscribe library for some JKML extra features (:guilabel:`-sampleeach`)
    
-Using 3rd-party programs
-========================
+   
+3rd-party programs
+------------------
 
 ABCluster
----------
+=========
 
 ABCluster can be obtained from http://www.zhjun-sci.com/software-abcluster-download.php
 The online manual is available at http://www.zhjun-sci.com/abcluster/doc/ 
@@ -101,7 +104,7 @@ then you should be able to use ABCluster, e.g.:
    ...
 
 XTB
----
+===
 
 The Linux version can be obtained from https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/xtb/xtb
 The online manual is available at https://xtb-docs.readthedocs.io/en/latest/contents.html
@@ -126,7 +129,7 @@ then you should be able to run XTB, e.g.:
    xtb file.xyz --opt vtight 
    
 Gaussian
---------
+========
 
 I hope that you know how to call gaussian jobs. If not ask a God person around you how to do it. 
 Usually you load gaussian from a module, e.g.:
@@ -152,7 +155,7 @@ based on that modify the following lines in the ``~/.JKCSusersetup.txt``:
 If you want to run Gaussian by yourself, use some predefined scripts (something like ``subg16`` etc.)
 
 How to setup Jupyter
---------------------
+====================
 
 Activate JKCS-python environment for Jupyter
 
