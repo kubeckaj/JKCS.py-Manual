@@ -36,6 +36,7 @@ Manual structure
    :maxdepth: 3
    :caption: JKCS
    
+   BasicExample
    Inputfile
    JKCS0_copy
    JKCS1_prepare
