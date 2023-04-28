@@ -1,4 +1,6 @@
-# About & Installation
+====================
+About & Installation
+====================
 
 ## What is JKQC?
 

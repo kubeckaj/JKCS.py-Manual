@@ -1,4 +1,6 @@
-# JKQC Manipulation
+=================
+JKQC Manipulation
+=================
 
 .. hint::
 

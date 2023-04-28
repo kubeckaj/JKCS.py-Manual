@@ -1,4 +1,6 @@
-# JKCS4_collect
+=============
+JKCS4_collect
+=============
 
 After JKCS2_explore or JKCS3_run submitted jobs are finished, JKCS4_collect script collects all data within the calculation folder. 
 
