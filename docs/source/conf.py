@@ -21,11 +21,6 @@ extensions = [
 
 #'sphinxcontrib.bibtex',
 
-bibtex_bibfiles = [
-    "bib/jkcs.bib",
-]
-bibtex_default_style = "unsrt"
-
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
