@@ -2,9 +2,9 @@
 Citations
 =========
 
-cite TBC
+cite TBC ❤️|
 
-Cite:: bash
+Cite::
 
    @article{kubecka19,
      author = {J. Kube{\v c}ka and V. Besel and T. Kurt{\'e}n and N. Myllys and H. Vehkam{\"a}ki}, 
