@@ -1,23 +1,32 @@
-==========
+=================
 How to QML
 ==========
 
-``JKML`` uses QML (https://www.qmlcode.org/index.html) to predict energies of molecular structures.
+``JKML`` uses QML (https://www.qmlcode.org/index.html) for kernel ridge regression (KRR) applied on molecular representation (FCHL) to predict molecular system properties. 
 
 .. note::
 
-   When setting up JKCS, you should use :guilabel:`-qml`, e.g.:
+   When setting up JKCS, you should use :guilabel:`-qml` in orger to install QML, e.g.:
    
    .. code::
    
       sh setup.sh -r grendel -qml
 
-There are two ways of training, either you train directly on binding energy:
+I show examples for electronic energy but other molecular properties can be modelled, too. Training directly on electronic energy of a cluster 
 
 .. math::
-   \Delta E^{DFT} = E_{cluster}^{DFT} - \sum E_{monomer}^{DFT}
+   E_{cluster}^{DFT}
 
-or on difference between high level and low theory (both calculated for the same structure geometries):
+is only alright if you train/test on its conformers (i.e. no large difference between modelled molecules are present).  
+
+Otherwise, it is better to model, for instance, binding energies of the studied clusters
+
+.. math::
+   \Delta E^{DFT} = E_{cluster}^{DFT} - \sum E_{monomer}^{DFT},
+
+or eventually atomization energies in the case of molecules.
+
+Quite many studies showed that one can perform a cheaper but faster QC calculation (e.g., at XTB level) and then only model the small differences between high level and low theory (both calculated for the same structure geometries):
 
 .. math::
    \Delta E^{DFT} = E_{cluster}^{DFT} - \sum E_{monomer}^{DFT}
