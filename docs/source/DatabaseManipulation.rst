@@ -6,9 +6,9 @@ Manipulation
 
    Use JKQC help to get idea what everything it can do:
    
-   ..code:: bash
+   .. code:: bash
    
-   JKQC -help
+      JKQC -help
    
 Generally, use JKQC in one of the following format:
 
