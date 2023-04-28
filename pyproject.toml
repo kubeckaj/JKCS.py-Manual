@@ -11,3 +11,7 @@ docs = [
     "sphinx>=5.1.1",  # c.f. https://github.com/scikit-hep/pyhf/pull/1926
     "sphinxcontrib-bibtex~=2.1",
 ]
+
+develop = [
+    "JKCS.py[docs]",
+]
