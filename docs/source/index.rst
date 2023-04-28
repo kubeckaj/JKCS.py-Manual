@@ -59,5 +59,6 @@ Manual structure
    :caption: JKML
 
    HowToQML
+   HowToSchNetPack
 
    
