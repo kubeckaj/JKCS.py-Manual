@@ -47,25 +47,25 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
    1sa.log 1w.log 1sa1w.log 1sa1w-1.log 1sa1w-2_32.log
    1sa.xyz 1w.xyz 1sa1w.xyz 1sa1w-1.xyz 1sa1w-2_32.xyz
    ....
-   $USER: JKgaussstat -collect log -out full_DFT.pkl
+   $USER: JKQC -collect log -out full_DFT.pkl
 
 .. note::
 
-   It is assumed that XTB and G16 outputs have extension `.log`. Generally, ORCA output is assumed to have `.out` extension that you can combine it as SP calculation with G16. However, for JKML, please change the extension to `.log` and use :guilabel:`-orcaext log` for ``JKgaussstat``, e.g.:
+   It is assumed that XTB and G16 outputs have extension `.log`. Generally, ORCA output is assumed to have `.out` extension that you can combine it as SP calculation with G16. However, for JKML, please change the extension to `.log` and use :guilabel:`-orcaext log` for ``JKQC``, e.g.:
    
    .. code::
       
-      JKgaussstat *.log -orcaext log -out full_DFT.pkl
+      JKQC *.log -orcaext log -out full_DFT.pkl
 
 .. hint::
 
-   It is strongly recommended to separate monomers into a single file. Additionally, JKQCpickle (can be called by JKgaussstat command) can be used to prepare other pickled files, e.g.:
+   It is strongly recommended to separate monomers into a single file. Additionally, JKQC can be used to prepare other pickled files, e.g.:
    
    .. code::
    
-      JKgaussstat full_DFT.pkl -extract 1sa,1w    -out monomers_DFT.pkl 
-      JKgaussstat full_DFT.pkl -extract 0-3sa0-5w -out train_DFT.pkl
-      JKgaussstat full_DFT.pkl -extract 4sa0-5w   -out test_DFT.pkl 
+      JKQC full_DFT.pkl -extract 1sa,1w    -out monomers_DFT.pkl 
+      JKQC full_DFT.pkl -extract 0-3sa0-5w -out train_DFT.pkl
+      JKQC full_DFT.pkl -extract 4sa0-5w   -out test_DFT.pkl 
 
 # Machine Lerning
       
@@ -95,7 +95,7 @@ The results can be found in output or in ``predicted_QML.pkl``, e.g.:
 
 .. code::
 
-   JKgaussstat predicted_QML.pkl -b -el
+   JKQC predicted_QML.pkl -b -el
    
 .. note::
 
