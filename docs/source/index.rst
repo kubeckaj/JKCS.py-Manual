@@ -31,6 +31,8 @@ Manual structure
    :caption: GET STARTED
    
    JKCSSetupAndInstallation
+   Citation
+   ClusterSubmission
 
 .. toctree::
    :maxdepth: 3
@@ -44,14 +46,12 @@ Manual structure
    JKCS3_run
    JKCS4_collect
    JKCS5_filter
-   ClusterSubmission
    
 .. toctree::
    :maxdepth: 3
    :caption: JKQC
    
    JKQCSetupAndInstallation
-   Pickle
    DatabaseManipulation
    
 .. toctree::
