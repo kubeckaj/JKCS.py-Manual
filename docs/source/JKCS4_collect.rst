@@ -41,7 +41,7 @@ The main outcome of the JKCS4_collect is, e.g., ``collectionXTB.pkl`` file. Howe
 
      molden movieXTB.xyz
 
-If you find the ``collectionXTB.txt``, ``resultsXTB.dat``, and ``movieXTB.xyz`` files unecessary, you can **o**nly **c**ollect (:guilabel:`-oc`) the pickle:
+If you find the ``collectionXTB.txt``, ``resultsXTB.dat``, and ``movieXTB.xyz`` files unecessary, you can **o**nly **c**ollect ( :guilabel:`-oc` ) the pickle:
 
 .. code::
 
