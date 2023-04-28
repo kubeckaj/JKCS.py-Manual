@@ -61,7 +61,8 @@ The JKCS4_collect is submission script. If you used JKCS2_explore or JKCS3_run w
    JKCS4_collect DLPNO -oc -par qtest -time 10:00
 
 
-## API
+API
+---
 
 :guilabel:`<string>`
     name of the folder which should be analysed (e.g. XTB)

@@ -1,6 +1,6 @@
-=================
-JKQC Manipulation
-=================
+============
+Manipulation
+============
 
 .. hint::
 
@@ -18,7 +18,8 @@ Generally, use JKQC in one of the following format:
    
 However, I would first recommend to keep the file names in the below suggested format (automatically done within JKCS).
 
-## File names
+File names
+----------
 
 To get full funcitionality of JKQC, keep the file names in the follwing format:
 
@@ -91,9 +92,11 @@ These are strong recomendations for you file names:
    
      JKQC -collect log -orcaext log -out collectedorca.pkl  
 
-## Database manipulation
+Database manipulation
+---------------------
 
-### Input
+Input
+=====
  
 :guilabel:`<Files>`  
   
@@ -123,7 +126,8 @@ input files can be any .log, .out, and .xyz files. However, if you specify, e.g.
 :guilabel:`--collect <string>`
   collects data for 
   
-### Output
+Output
+======
 
 :guilabel:`--out database.pkl`
   output ``database.pkl`` pickled file
@@ -156,7 +160,8 @@ You can print various other files:
 :guilabel:`-imos_xlsx`
   Excell sheet input for IMoS
   
-## Printing properties
+Printing properties
+-------------------
 
 See JKQC help ``JKQC -help`` for all various properties. For instance, you can print (name and) electronic energy from files/database:
 
@@ -165,7 +170,8 @@ See JKQC help ``JKQC -help`` for all various properties. For instance, you can p
    JKQC *.log -b -el        #[basename] [electronic_energy]
    JKQC database.pkl -b -el #significantly faster
 
-## Processing
+Processing
+----------
    
 You can extract (name and) electronic energy for a specific cluster(s):
 
@@ -187,7 +193,8 @@ Certainly utilize some filtering techniques (see JKQC help for greater detail):
  - Low/High cutoff: :guilabel:`-pass lf 0` (removes structures with negative/imaginary frequencies), :guilabel:`-cut rg 10` (select structures with `Rg` less than 10 Angstrom), :guilabel:`-cutr el 10` (selects only 10 lowest kcal/mol structures)
  - Reacted: :guilabel:`-reacted` (compares all conformers and tries to remove some reacted/exploded structures) 
 
-## Post-processing
+Post-processing
+---------------
 
 This an example how to print binding free energies in kcal/mol while taking only the global free energy minimum
 
