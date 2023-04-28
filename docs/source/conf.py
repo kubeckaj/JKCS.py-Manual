@@ -17,8 +17,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinxcontrib.bibtex',
 ]
+
+#'sphinxcontrib.bibtex',
 
 bibtex_bibfiles = [
     "bib/jkcs.bib",
