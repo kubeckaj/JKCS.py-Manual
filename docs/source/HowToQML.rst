@@ -1,4 +1,4 @@
-=================
+==========
 How to QML
 ==========
 
@@ -37,6 +37,8 @@ Quite many studies showed that one can perform a cheaper but faster QC calculati
 
 The delta-ML does perform significantly better and low level theory calculations are usually cheap to perform.
 
+# Preparing files
+
 The structures should be provided in a pickled database.pkl file (see ``JKQCpickle`` manual). The file naming must have specific format (you can try, i.e. with caution, to use ``JKname`` to rename your files). See examples:
 
 .. code::
@@ -45,7 +47,7 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
    1sa.log 1w.log 1sa1w.log 1sa1w-1.log 1sa1w-2_32.log
    1sa.xyz 1w.xyz 1sa1w.xyz 1sa1w-1.xyz 1sa1w-2_32.xyz
    ....
-   $USER: JKgaussstat *.log -out full_DFT.pkl
+   $USER: JKgaussstat -collect log -out full_DFT.pkl
 
 .. note::
 
@@ -64,6 +66,8 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
       JKgaussstat full_DFT.pkl -extract 1sa,1w    -out monomers_DFT.pkl 
       JKgaussstat full_DFT.pkl -extract 0-3sa0-5w -out train_DFT.pkl
       JKgaussstat full_DFT.pkl -extract 4sa0-5w   -out test_DFT.pkl 
+
+# Machine Lerning
       
 ``JKML`` is used similarly as other ``JKCS`` commands
 

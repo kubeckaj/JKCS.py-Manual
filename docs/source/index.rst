@@ -57,6 +57,7 @@ Manual structure
 .. toctree::
    :maxdepth: 3
    :caption: JKML
-   
-   JKML
+
+   HowToQML
+
    
