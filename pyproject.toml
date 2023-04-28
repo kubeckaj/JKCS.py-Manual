@@ -6,3 +6,8 @@ build-backend = "flit_core.buildapi"
 name = "JKCS.py"
 authors = [{name = "Kubecka", email = "akcebukbukaj@gmail.com"}]
 dynamic = ["version", "description"]
+
+docs = [
+    "sphinx>=5.1.1",  # c.f. https://github.com/scikit-hep/pyhf/pull/1926
+    "sphinxcontrib-bibtex~=2.1",
+]
