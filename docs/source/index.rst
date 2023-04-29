@@ -21,7 +21,7 @@ This is the online documentation for JKCS = Jammy Key for Configurational Sampli
     If you have questions, feel free to contact me: ja-kub-ecka@chem.au.dk
     
 📜 Thanks
-    I would like to thank all people who helped me to develope, improve, and debug the JKCS/JKQC/JKML program: Vitus Besel, Ivo Neefjes, Yosef Knattrup, and others
+    I would like to thank all people who helped me to develope, improve, and debug the JKCS/JKQC/JKML program: Vitus Besel, Ivo Neefjes, Yosef Knattrup, and others ❤️
     
 Manual structure
 ----------------

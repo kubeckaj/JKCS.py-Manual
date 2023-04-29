@@ -2,7 +2,7 @@
 Citations
 =========
 
-cite TBC ❤️
+Please, if you use any code, try to check if you have cited all literature.
 
 JKCS
 ----
@@ -13,7 +13,7 @@ kubecka19
    Kubečka, J.; Besel, V.; Kurtén, T.; Myllys, N.; Vehkamäki, H. Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine. *J. Phys. Chem. A* **2019**, *123*, 6022–6033.
 
 
-.. code:: 
+.. code:: none
 
    @article{kubecka19,
      author = {J. Kube{\v c}ka and V. Besel and T. Kurt{\'e}n and N. Myllys and H. Vehkam{\"a}ki}, 
@@ -33,7 +33,7 @@ JKQC come together with our first machine learning methods, hence cite please:
 kubecka22
    Kubečka, J.; Christiansen, A. S.; Rasmussen, F. R.; Elm, J. Quantum Machine Learning Approach for Studying Atmospheric Cluster Formation. *Environ. Sci. Technol. Lett.* **2022**, *9(3)*, 239–244.
 
-.. code:: 
+.. code:: none
 
    @article{kubecka22,
      author = {J. Kube{\v c}ka and A. S. Christensen and F. R. Rasmussen and J. Elm}, 
@@ -66,7 +66,7 @@ christiansen20
    Christensen, A. S.; Bratholm, L. A.; Faber, F. A.; von Lilienfeld, O. A. FCHL Revisited: Faster and More Accurate Quantum Machine Learning. *J. Chem. Phys.* **2020**, *152*, 044107.
  
 
-.. code::
+.. code:: none
 
    @article{kubecka22,
      author = {J. Kube{\v c}ka and A. S. Christensen and F. R. Rasmussen and J. Elm}, 
@@ -107,7 +107,12 @@ You should cite the Pearl code itself:
 mcgrath12
    McGrath, M. J.; Olenius, T.; Ortega, I. K.; Loukonen, V.; Paasonen, P.; Kurtén, T.; Kulmala, M.; Vehkamäki, H. Atmospheric Cluster Dynamics Code: a flexible method for solution of the birth-death equations. *Atmos. Chem. Phys.* **2012**, *12(5)*, 2345–2355.
 
-.. code::  
+and also the repository of T. Olenius which codes were modified and inspiried by within JKacdc code:
+
+qml
+   Olenius T. ACDC: Atmospheric Cluster Dynamics Code. **2023**; https://github.com/tolenius/ACDC (*accessed February 7, 2023*).
+
+.. code:: none 
 
    @article{mcgrath12,
      author = {McGrath, M. J. and Olenius, T. and Ortega, I. K. and Loukonen, V. and Paasonen, P. and Kurt{\'e}n, T. and Kulmala, M. and Vehkam{\"a}ki, H.},
@@ -118,4 +123,10 @@ mcgrath12
      number = {5},
      pages = {2345--2355},
      doi = {https://doi.org/10.5194/acp-12-2345-2012}
+   }
+   @misc{acdc,
+     author = {T. Olenius},
+     title = {ACDC: Atmospheric Cluster Dynamics Code},
+     year = {2023},
+     note = {\url{https://github.com/tolenius/ACDC} (accessed February 7, 2023)}
    }
