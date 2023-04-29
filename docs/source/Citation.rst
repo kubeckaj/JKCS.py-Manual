@@ -9,8 +9,7 @@ JKCS
 
 When you use any JKCS command, please, cite please the following:
 
-.. rst:role:: kubecka19
-   
+kubecka19
    Kubečka, J.; Besel, V.; Kurtén, T.; Myllys, N.; Vehkamäki, H. Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine. *J. Phys. Chem. A* **2019**, *123*, 6022–6033.
 
 
@@ -31,8 +30,7 @@ JKQC
 
 JKQC come together with our first machine learning methods, hence cite please: 
 
-.. rst:role:: kubecka22
-
+kubecka22
    Kubečka, J.; Christiansen, A. S.; Rasmussen, F. R.; Elm, J. Quantum Machine Learning Approach for Studying Atmospheric Cluster Formation. *Environ. Sci. Technol. Lett.* **2022**, *9(3)*, 239–244.
 
 .. code:: json
@@ -53,8 +51,7 @@ JKML
 
 When you use JKML, please cite:
 
-.. rst:role:: kubecka22
-
+kubecka22
    Kubečka, J.; Christiansen, A. S.; Rasmussen, F. R.; Elm, J. Quantum Machine Learning Approach for Studying Atmospheric Cluster Formation. *Environ. Sci. Technol. Lett.* **2022**, *9(3)*, 239–244.
 
 QML
@@ -62,12 +59,10 @@ QML
 
 If you use kernel ridge regression (KRR) with the FCHL19 molecular representation, cite also the following:
 
-.. rst:role:: qml
-
+qml
    Christensen, A. S.; Faber, F. A.; Huang, B.; Bratholm, L. A.; Tkatchenko, A.; Muller, K. R.; von Lilienfeld, O. A. QML: A Python Toolkit for Quantum Machine Learning. **2017**; https://github.com/qmlcode/qml (*accessed February 7, 2023*).
 
-.. rst:role:: christiansen20
-
+christiansen20
    Christensen, A. S.; Bratholm, L. A.; Faber, F. A.; von Lilienfeld, O. A. FCHL Revisited: Faster and More Accurate Quantum Machine Learning. *J. Chem. Phys.* **2020**, *152*, 044107.
  
 
