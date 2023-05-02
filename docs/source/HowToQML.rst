@@ -37,7 +37,8 @@ Quite many studies showed that one can perform a cheaper but faster QC calculati
 
 The delta-ML does perform significantly better and low level theory calculations are usually cheap to perform.
 
-# Preparing files
+Preparing files
+---------------
 
 The structures should be provided in a pickled .pkl files (see ``JKQC`` manual). The file naming must have specific format (you can try, i.e. with caution, to use ``JKname`` to rename your files). See examples:
 
@@ -67,7 +68,8 @@ The structures should be provided in a pickled .pkl files (see ``JKQC`` manual).
       JKQC full_DFT.pkl -extract 0-3sa0-5w -out train_DFT.pkl
       JKQC full_DFT.pkl -extract 4sa0-5w   -out test_DFT.pkl 
 
-# Machine Lerning
+Machine Lerning
+---------------
       
 ``JKML`` is used similarly as other ``JKCS`` commands 
 
@@ -101,8 +103,8 @@ or
    .. code::
    
       JKML -train train_DFT.pkl -monomers monomers_DFT.pkl -loc
-      JKML -trained model.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl -loc
-      
+      JKML -trained model.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl -loc     
+    
 The results can be found in output or in ``predicted_QML.pkl``, e.g.:
 
 .. code::

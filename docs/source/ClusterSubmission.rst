@@ -56,21 +56,21 @@ You can overwrite the default arguments by using these commands:
 :guilabel:`-mem, -memory <memory_string_format>`
     size of memory allocated per CPU [e.g., 4000mb or 32gb]
 
-:guilabel:`-jpt <integer>`  
-    number of calculation jobs gathered into 1 task (=1 submitted job). For instance, 100 Gaussian optimizations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
+:guilabel:`-tpj <integer>`  
+    number of calculations combined into 1 job (=tasks per job/1 submitted job). For instance, 100 Gaussian optimizations can be submitted as 20 jobs where each job will perform 5 calculations using 8 CPUs:
 
 .. code:: bash
   
-   JKCS3_run -rf XTB -nf DFT_opt -p G16 -m "# wb97xd 6-31++g** opt" -jpt 5 -cpu 8
+   JKCS3_run -rf XTB -nf DFT_opt -p G16 -m "# wb97xd 6-31++g** opt" -tpj 5 -cpu 8
    
 If you have many conformer combinations, you can reduce the configurational search for each of them and run them in series. If you have 300 combinations, you can submit only 30 jobs using (+ you can do the same with the subsequent XTB optimization):
 
 .. code:: bash
   
-   JKCS2_explore -pop 50 -gen 50 -lm "6000/NoC" -jpt 10
-   JKCS3_run -jpt 10
+   JKCS2_explore -pop 50 -gen 50 -lm "6000/NoC" -tpj 10
+   JKCS3_run -tpj 10
    
-:guilabel:`-taks, -maxtasks <integer>`
+:guilabel:`-maxtasks <integer>`
     max. number of tasks to be submitted (per cluster subfolder). I am worried that people sometimes do not adequately calculate how many jobs they could submit with one command. Therefore, I did restrict your submission to max 100 jobs. You can easily raise this threshold by this argument. 
 
 :guilabel:`-N, -nodes <integer>`
