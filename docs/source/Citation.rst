@@ -9,7 +9,7 @@ JKCS
 
 When you use any JKCS command, please, cite please the following:
 
--kubecka19
+ kubecka19
    Kubečka, J.; Besel, V.; Kurtén, T.; Myllys, N.; Vehkamäki, H. Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine. *J. Phys. Chem. A* **2019**, *123*, 6022–6033. https://doi.org/10.1021/acs.jpca.9b03853
 
 .. code:: none
