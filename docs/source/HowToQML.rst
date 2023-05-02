@@ -12,14 +12,14 @@ How to QML
    
       sh setup.sh -r grendel -qml
 
-I show examples for electronic energy but other molecular properties can be modelled, too. Training directly on electronic energy of a cluster 
+I show examples for electronic energy but other molecular properties can be modelled, too (use :guilabel:`-column` argument). Training directly on electronic energy of a cluster 
 
 .. math::
    E_{cluster}^{DFT}
 
-is only alright if you train/test on its conformers (i.e. no large difference between modelled molecules are present).  
+is alright only if you train/test on single-cluster conformers (i.e. no large energy difference between modelled molecules are present).  
 
-Otherwise, it is better to model, for instance, binding energies of the studied clusters
+Otherwise, it is better to model binding energies of the studied clusters
 
 .. math::
    \Delta E^{DFT} = E_{cluster}^{DFT} - \sum E_{monomer}^{DFT},
@@ -39,7 +39,7 @@ The delta-ML does perform significantly better and low level theory calculations
 
 # Preparing files
 
-The structures should be provided in a pickled database.pkl file (see ``JKQCpickle`` manual). The file naming must have specific format (you can try, i.e. with caution, to use ``JKname`` to rename your files). See examples:
+The structures should be provided in a pickled .pkl files (see ``JKQC`` manual). The file naming must have specific format (you can try, i.e. with caution, to use ``JKname`` to rename your files). See examples:
 
 .. code::
    
@@ -69,18 +69,30 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
 
 # Machine Lerning
       
-``JKML`` is used similarly as other ``JKCS`` commands
+``JKML`` is used similarly as other ``JKCS`` commands 
 
 .. code::
 
    JKML -help
-   JKML -loc -method direct -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl
-   JKML -par test -time 10:00 -mem 5GB -cpu 2 -method direct -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl 
+   JKML -loc -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl
+   JKML -par test -time 10:00 -mem 5GB -cpu 2 -train train_DFT.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl 
    JKML -loc -print 2 -train train_DFT.pkl train_XTB.pkl -test test_DFT.pkl test_XTB.pkl -monomers monomers_DFT.pkl monomers_XTB.pkl
 
 .. hint::
 
    See ``Cluster submission`` (under ``JKCS``) to understand how to tune cluster parameters.
+
+Whether you plan to use direct-learning or delta-learning is defined by number of files you provide, e.g.:
+
+.. code::
+ 
+   JKML -train train_DFT.pkl -test test_DFT.pkl -monomers M_DFT.pkl
+   
+or 
+
+.. code::
+ 
+   JKML -train train_DFT.pkl train_XTB.pkl -test test_DFT.pkl test_XTB.pkl -monomers M_DFT.pkl M_XTB.pkl
 
 .. note::
  
@@ -88,8 +100,8 @@ The structures should be provided in a pickled database.pkl file (see ``JKQCpick
    
    .. code::
    
-      JKML -method direct -train train_DFT.pkl -loc
-      JKML -method direct -trained vars.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl -loc
+      JKML -train train_DFT.pkl -monomers monomers_DFT.pkl -loc
+      JKML -trained model.pkl -test test_DFT.pkl -monomers monomers_DFT.pkl -loc
       
 The results can be found in output or in ``predicted_QML.pkl``, e.g.:
 

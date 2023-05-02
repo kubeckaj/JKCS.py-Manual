@@ -109,7 +109,7 @@ mcgrath12
 
 and also the repository of T. Olenius which codes were modified and inspiried by within JKacdc code:
 
-qml
+acdc
    Olenius T. ACDC: Atmospheric Cluster Dynamics Code. **2023**; https://github.com/tolenius/ACDC (*accessed February 7, 2023*).
 
 .. code:: none 
