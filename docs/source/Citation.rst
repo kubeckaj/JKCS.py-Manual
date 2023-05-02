@@ -9,21 +9,23 @@ JKCS
 
 When you use any JKCS command, please, cite please the following:
 
-kubecka19
-   Kubečka, J.; Besel, V.; Kurtén, T.; Myllys, N.; Vehkamäki, H. Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine. *J. Phys. Chem. A* **2019**, *123*, 6022–6033.
+.. tabbed:: citaion
 
+   Kubečka, J.; Besel, V.; Kurtén, T.; Myllys, N.; Vehkamäki, H. Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine. *J. Phys. Chem. A* **2019**, *123*, 6022–6033. https://doi.org/10.1021/acs.jpca.9b03853
 
-.. code:: none
+.. tabbed:: BibTeX
 
-   @article{kubecka19,
-     author = {J. Kube{\v c}ka and V. Besel and T. Kurt{\'e}n and N. Myllys and H. Vehkam{\"a}ki}, 
-     title = {Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine},
-     journal = {J. Phys. Chem. A}, 
-     year = {2019}, 
-     volume = {123}, 
-     pages = {6022--6033}, 
-     doi = {https://doi.org/10.1021/acs.jpca.9b03853},
-   }
+   .. code:: none
+   
+      @article{kubecka19,
+        author = {J. Kube{\v c}ka and V. Besel and T. Kurt{\'e}n and N. Myllys and H. Vehkam{\"a}ki}, 
+        title = {Configurational Sampling of Noncovalent (Atmospheric) Molecular Clusters: Sulfuric Acid and Guanidine},
+        journal = {J. Phys. Chem. A}, 
+        year = {2019}, 
+        volume = {123}, 
+        pages = {6022--6033}, 
+        doi = {https://doi.org/10.1021/acs.jpca.9b03853},
+      }
 
 JKQC
 ----
