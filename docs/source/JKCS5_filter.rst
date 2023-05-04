@@ -25,7 +25,7 @@ Uniqueness filtering
 
 Uniqueness filtering removes structures that are too similar to other structures. When calling
 JKCS4_collect, a uniqueness filter is automatically applied on ``collectionXXX.txt`` and the results are stored in ``resultsXXX.dat``. 
-This filter assumes two structures with energy difference less than 0.001 hartree and gyration radius (Rg) difference less than 0.01 to be the same. 
+This filter assumes two structures with energy difference less than 0.001 hartree and gyration radius (Rg) difference less than 0.01 Angstrom to be the same. 
 Users can run the JKCS5_filter uniqueness filter to fine-tune these uniqueness thresholds. 
 Otherwise, users do not have to bother with uniqueness.
 

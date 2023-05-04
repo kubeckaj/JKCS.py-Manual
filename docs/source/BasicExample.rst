@@ -1,4 +1,4 @@
-===========================
+================
 About & Examples
 ================
 
@@ -20,8 +20,7 @@ It is important to note that there is no guarantee that the global minimum of th
 JKCS PROVIDES:
 
  * a collection of scripts which can be used for CS with a large set of structures and files
- * communication with 3rd-party computational programs such as Gaussian, ORCA, ABCluster,
-and XTB (and for advanced users: CREST, IMoS)
+ * communication with 3rd-party computational programs such as Gaussian, ORCA, ABCluster, and XTB (and for advanced users: CREST, IMoS)
  * automated handling of jobs and submissions to (super)computer clusters
  * it is coupled with JKQC and the pickled file/structures databases can be easily forwarded to JKML for machine-learning purposes
 
