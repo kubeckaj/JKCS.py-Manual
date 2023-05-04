@@ -113,7 +113,7 @@ of the cluster(s).
 
 .. note::
 
-   The multiplicity is equal to the number of unpaired electrons plus one (M = 2S+1).
+   The multiplicity is equal to the number of unpaired electrons plus one (TotalMultiplicity = 2S+1).
    
 .. hint::
 
@@ -128,8 +128,7 @@ desired cluster. The order in which the monomers appear in this format should be
 order in which the monomers are listed in the "structure of building monomers" part of ``input.txt`` (see below). 
 If there are listed molecules "sa" and "am", the composition "1_2" equals to cluster (sa)1(am)2.
 
-When configurational sampling of multiple clusters with different compositions need
-to be done, each composition can be written on one line with a space between two separate compositions.
+When configurational sampling of multiple clusters with different compositions needs to be done, each composition can be written on one line with a space between two separate compositions.
 For multiple clusters, some symbols can also be used to quickly define the clusters. Writing
 "1-3_(4,5)" would for instance be equivalent to "1_4 2_4 3_4 1_5 2_5 3_5".
 

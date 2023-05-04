@@ -1,5 +1,6 @@
 ablog
 sphinx_panels
+sphinx-design
 sphinx_copybutton
 sphinx_togglebutton
 sphinx-togglebutton
