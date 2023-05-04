@@ -55,3 +55,75 @@ This procedure will prepare input file for CS of sulfuric acid and water dimer. 
 
 For more details see the other sections of JKCS manual.
 For help with individual programs continue reading on this page.
+
+Advanced example
+----------------
+
+TBC
+
+Tips & Tricks
+-------------
+
+**GLOBAL MINIMUM**
+
+There is no guarantee that the global minimum of the cluster is actually found
+through configurational sampling. It becomes more probable if we include all
+monomer conformers, use a large number of guess structures and optimize more
+structures at higher levels of theory, but absolute certainty that the global
+minimum is found will never be achieved.
+
+**DETAIL OF OUTPUT**
+
+The amount of printed output can be adjusted by using command ‘-print NUM’:
+
+ * -print 0 .... basically just error messages
+ * -print 1 .... [DEFAULT] traditional output
+ * -print 2 .... enlarged output, all algorithm steps are commented
+ * -print 3 .... very very detailed output
+
+**CALLING JKCS COMMANDS**
+
+Each JKCS command can be performed inside a specific subfolder ‘SYS_{system}’,
+or from your ‘parent directory’ where the subfolders are located. In this case
+the algorithm enters each directory and performs the command there.
+
+If you wish to perform a command from your ‘mother directory’, but only for
+some specific subfolders, you can give the subfolder as an argument:
+
+.. code:: 
+
+   JKCS2_explore SYS_3SA SYS_4SA -gen 100
+   JKCS2_explore SYS_1SA_1-5AM -pop 2000 -gen 150
+   
+**JKcheck**
+
+JKcheck can be used to check how many calculations have been finished.
+
+**ORDER OF ARGUMENTS**
+
+The order of arguments does not matter.
+
+**COLORS & SYMBOLS IN PRINTED OUTPUT**
+
+The colors and symbols in the printed output of JKCS commands can be turned off in 2 ways:
+
+* Change Qsymbol or Qcolours in ~/.JKCSusersetup.txt to "no"
+* COLORING TEXT: use -nocolors argument to have text without colors
+* KISSING SYMBOL: use -nosymbol to remove the symbol in the begging of output
+
+**‘M’ & ‘NoC’ SYMBOLS**
+
+These symbols can be used with many JKCS commands to make values dependent on
+the ‘number of Molecules’ or ‘Number of Combinations’. When a lot of conformers
+are taken into account for a certain monomer, ‘NoC’ can become very large.
+Therefore, always be mindful of the result that using ‘M’ and ‘NoC’ might have
+for the exploration of all studied systems. Example: 
+
+.. code:: bash
+    
+   JKCS2_explore -pop 1000*M -gen 100 -lm 4000/NoC
+   
+**BOSS AND MANAGER**
+
+Manager can run multiple JKCS commands and wait until these are finished. The commands to be executed are read from a txt file. Each command should be put on a separate line. Boss can handle several managers. Since these are already complicated command with self-submission, I will not provide manual for those and only if you consider yourself an experienced user, contact J. Kubečka and he will provide the manual. 
+   
