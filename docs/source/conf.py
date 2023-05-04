@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'sphinx_togglebutton',
+    'sphinx_tabs.tabs',
 ]
 
 #'sphinxcontrib.bibtex',
