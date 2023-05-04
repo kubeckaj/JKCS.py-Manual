@@ -8,6 +8,7 @@ JKCS
 ----
 
 When you use any JKCS command, please, cite please the following:
+
 .. tabs::
 
    .. tab:: T1
