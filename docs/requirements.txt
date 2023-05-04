@@ -1,4 +1,5 @@
 ablog
+sphinx-tabs
 sphinx_panels
 sphinx-design
 sphinx_copybutton
