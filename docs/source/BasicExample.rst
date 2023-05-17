@@ -59,7 +59,26 @@ For help with individual programs continue reading on this page.
 Advanced example
 ----------------
 
-TBC
+Here is more advanced example:
+
+.. code:: bash
+
+   JKCS2_explore -pop 3000 -gen 200 -lm 2000/NoC -cpu 1 -time 3-00:00:00 -exploded -par q64,q48,q40,q28,q24,q20
+   JKCS3_run -of ABC -nf XTB -m "--gfn 1 --opt" -cpu 1 -time 1-00:00:00 -par q64,q48,q40,q28,q24,q20
+   JKCS4_collect XTB -oc -time 1-00:00:00
+   JKQC collectionXTB.pkl -unique rg,el,dip -out filteredXTB0.pkl
+   sbatch -n 1 JKsend 'JKQC filteredXTB0.pkl -reacted -sort el -select 1000 -noex -out filteredXTB.pkl -ePKL > TO_DO_DFT.dat' | awk '{print $4}' >> .jobs.txt
+   JKCS3_run -p G16 -rf TO_DO_DFT.dat -nf DFT_SP -m "# wb97xd 6-31++g**" -time 2:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
+   JKCS4_collect DFT_SP -oc -time 1-00:00:00
+   JKQC collectionDFT_SP.pkl -sort el -select 100 -noex -ePKL > runDFT.dat
+   JKCS3_run -p G16 -rf runDFT.dat -nf DFT_opt -m "# wb97xd 6-31++g** opt" -time 3-00:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
+   JKCS4_collect DFT_opt -oc -time 1-00:00:00
+   JKQC collectionDFT_opt.pkl -noex -ePKL > runDFTO.dat
+   JKCS3_run -p G16 -rf runDFTO.dat -nf DFT_freq -m "# wb97xd 6-31++g** freq" -time 1-00:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
+   JKCS4_collect DFT_freq -time 1-00:00:00 -oc
+   JKQC collectionDFT_freq.pkl -pass lf 0 -sort g -fc 100 -v 0.996 -select 5 -noex -ePKL > runDLPNO.dat
+   JKCS3_run -p ORCA -rf runDLPNO.dat -nf DLPNO -m "! aug-cc-pVTZ aug-cc-pVTZ/C cc-pVTZ-F12-CABS DLPNO-CCSD(T) TightSCF" -time 2-00:00:00 -cpu 8 -mem 20gb
+   JKCS4_collect DLPNO -time 1-00:00:00 -orca -oc
 
 Tips & Tricks
 -------------
@@ -80,6 +99,14 @@ The amount of printed output can be adjusted by using command ‘-print NUM’:
  * -print 1 .... [DEFAULT] traditional output
  * -print 2 .... enlarged output, all algorithm steps are commented
  * -print 3 .... very very detailed output
+ 
+**PREVIOUS COMMANDS**
+
+The JKCS/JKQC/JKML commands are saved into the 'output' file. You can examine them by:
+
+.. code::
+
+   grep COMMAND output
 
 **CALLING JKCS COMMANDS**
 
