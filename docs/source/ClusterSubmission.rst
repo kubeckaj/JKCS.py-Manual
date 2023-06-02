@@ -4,7 +4,7 @@ Cluster submission
 
 When working on a (super)computer cluster, all default parameters for submitting jobs are taken from ``parameters.txt`` in each subfolder formed from ``input.txt`` by JKCS1_prepare. It is assumed that the computer system uses SBATCH to submit jobs. Hence, additional parameters for the SBATCH command could be eventually modified in the ``~/.JKCSusersetup.txt`` under the program_SBATCH function. When calling a JKCS script, it is also possible to overwrite the submission parameters by the arguments shown on this page. 
 
-Remember that only JKCS2_explore, JKCS3_run, and JKCS4_collect are scripts that would submit jobs to cluster as these scripts employ 3rd party programs that might demand considerable computational resources. Using the submission parameters for JKCS0_copy, JKCS1_prepare, and JKCS5_filter is not possible (they run locally). 
+Remember that only JKCS2_explore, JKCS3_run, JKCS4_collect, and JKML are scripts that would submit jobs to cluster as these scripts employ 3rd party programs that might demand considerable computational resources. Using the submission parameters for JKCS0_copy, JKCS1_prepare, and JKCS5_filter is not possible (they run locally). 
 
 Run locally
 -----------
@@ -18,7 +18,7 @@ If you want to also run JKCS2-4 on your local computer and not submit any jobs, 
   
    JKCS3_run -p XTB -m “--opt --gfn 1” -loc
    JKCS4_collect XTB -loc
-   JKCS4_collect DFT_freq -gibbs -loc
+   JKCS4_collect DFT_freq -loc
 
 .. note::
 
@@ -83,13 +83,13 @@ If you have many conformer combinations, you can reduce the configurational sear
 Greasy (multinodal) multitask single job
 ----------------------------------------
 
-There is an option to submit only single job that contains several tasks that will run parallely. It is greasy (=dirty) way of using multinodal clusters where submission of single jobs is not allowed or maximal number of submitted jobs is limitted. Since the submitted job has to wait for all tasks to be finished (also the slowest one), it leads to waste of computational resources where CPUs are not used. Hence, it is called greasy.
+There is an option to submit only single job that contains several tasks that will run parallely. It is greasy (=dirty) way of using multinodal clusters where submission of single jobs is not allowed or maximal number of submitted jobs is limited. Since the submitted job has to wait for all tasks to be finished (also the slowest one), it leads to waste of computational resources where CPUs are not used. Hence, it is called greasy.
 
 :guilabel:`-greasy`
     this will activate greasy mode
 
 :guilabel:`-con, -cores_on_node <integer>`
-    number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo -N -l`` command to see how much cores is on which partition. Please, be aware that if a partition has 256 cores but 2 nodes then you should specify -con 128.
+    number of cores on node where you submit jobs. Default = 40; however, you should set the correct number of cores. Use the ``sinfo -N -l`` command to see how many cores are on which partition. Please, be aware that if a partition has 256 cores but 2 nodes then you should specify -con 128.
 
 :guilabel:`-N, -nodes <integer>`
     number of nodes. If the number of tasks requires more nodes, you should set it. If you set more than necessary, then the maximal necessary number of nodes will be used (so feel free to e.g. set -nodes 20 if you do not want to worry about that). Remember that there is also some maximal number of nodes per cluster partition.
