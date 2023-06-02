@@ -28,7 +28,7 @@ The folder/subfolders tree should during configurational sampling look like this
       JKCS3_run -p XTB -m “--opt --gfn 1” SYS_2sa_*am
       JKCS4_collect XTB SYS_2sa_1am
       
-   if you want to peform specific command (or sequence of commands) in each subfolder, use:
+   if you want to perform a specific command (or sequence of commands) in each subfolder, use:
    
    .. code:: 
    
@@ -36,7 +36,7 @@ The folder/subfolders tree should during configurational sampling look like this
       JKfor "head -n 1 resultsDFT_freq.dat > ../all_results.dat"
       JKfor 'head -n 50 resultsXTB.dat > resultsXTB_FILTERED.dat; JKCS3_run -p XTB -rf XTB -nf XTB_freq -m "--hess --gfn 1"'
       
-EXAMPLE: Calling JKCS1_prepare for an negatively charged cluster of 1 ammonia and 2 sulfuric acid molecules, ``SYS_2am_1sa`` folder would be created. This folder would contain ``parameters.txt`` where 5 possible cluster combinations are written:
+EXAMPLE: Calling JKCS1_prepare for a negatively charged cluster of 1 ammonia and 2 sulfuric acid molecules, ``SYS_2am_1sa`` folder would be created. This folder would contain ``parameters.txt`` where 5 possible cluster combinations are written:
 
 • 0_1_0_0_2_0 (NH4+)1(HSO4-)2
 • 0_1_0_1_0_1 (NH4+)1(cis-H2SO4)1(SO4−-)1
