@@ -38,8 +38,8 @@ Here are few examples:
 
    w ............ water (H2O,OH-,H+)         cd .......... carbon dioxide (CO2)
    aq ........... water (H20)                m ........... methane (CH4)
-                                             ar .......... argone (Ar)
-   nta .......... nitric acid (HNO3)         ne .......... neone (Ne)
+                                             ar .......... argon (Ar)
+   nta .......... nitric acid (HNO3)         ne .......... neon (Ne)
    sa ........... sulfuric acid (H2SO4)      he ........... helium
    msa .......... methanesulfonic acid
                                              h ............ proton (H+)
