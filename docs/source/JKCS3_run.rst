@@ -3,7 +3,7 @@ JKCS3_run
 =========
 
 JKCS3_run utilizes 3rd-party programs to optimize clusters and evaluate their properties (e.g., electronic energy or free energies). 
-The script either uses the output structures in the folder from pervious step (e.g., ``XTB``, ``ABC``, ``DFT_opt``) or those listed in a file (e.g., ``resultsXTB.dat``). 
+The script either uses the output structures in the folder from previous step (e.g., ``XTB``, ``ABC``, ``DFT_opt``) or those listed in a file (e.g., ``resultsXTB.dat``). 
 
 .. hint::
 
@@ -39,7 +39,7 @@ If you did extra-filter the data and ``resultsXXX_FILTERED.dat`` exists, it will
    
 .. hint::
 
-   You can check if you calculations are still running by using:
+   You can check if your calculations are still running by using:
    
    .. code::
      
