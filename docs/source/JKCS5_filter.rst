@@ -48,7 +48,7 @@ Selection
 
 Sampling (or selection) uniformly (covering PES uniformly) picks a specified number of structures
 from the ``resultsXXX.dat`` file after applying outlier filtering. This is useful when there are too many
-structures left for calculations on a higher level of theory. Hence, to reach a reasonable computational cost, we take only very different conformers. As sampling omits some minima, it might result in losing the global minimum structure, but due to the uniform sampling, the global minimum should not be far from one of the other selected minimum.
+structures left for calculations on a higher level of theory. Hence, to reach a reasonable computational cost, we take only very different conformers. As sampling omits some minima, it might result in losing the global minimum structure, but due to the uniform sampling, the global minimum should not be far from one of the other selected minima.
 
 These three filter operations can also be combined. You can thus call JKCS5_filter to apply an
 uniqueness and outlier filter on a resultsXXX.dat file and then uniformly pick a sample of the remaining structures.
