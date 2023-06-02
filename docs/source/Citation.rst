@@ -7,7 +7,7 @@ Please, if you use any code, try to check if you have cited all literature.
 JKCS
 ----
 
-When you use any JKCS command, please, cite please the following:
+When you use any JKCS command, please, cite the following paper that basically introduced JKCS to the world:
 
 .. tabs::
 
@@ -33,7 +33,7 @@ When you use any JKCS command, please, cite please the following:
 JKQC
 ----
 
-JKQC come together with our first machine learning methods, hence cite please: 
+JKQC come together with our first machine learning methods, hence please cite: 
 
 .. tabs::
 
@@ -123,7 +123,7 @@ TBC
 JKacdc
 ------
 
-You should cite the Pearl code itself and also the repository of T. Olenius which codes were modified and inspiried by within JKacdc code:
+You should cite the Pearl code itself and also the repository of T. Olenius. These codes were modified and inspired the JKacdc code:
 
 .. tabs::
 
