@@ -78,7 +78,7 @@ Arguments
     lifetime = maximum generations, i.e. number of loops before replacing unchanged structure. The best is to keep this parameter as 2-5. [default = 4]
     
 :guilabel:`-box <float|integer>`
-    simulation box size. When you use small or large (compared to sulfuric acid) molecules, you should modify the box size otherwise the resultant clusters could contain evaporated molecules or the configuration exploration would not be thourough enough. [default = 7+M]
+    simulation box size. When you use small or large (compared to sulfuric acid) molecules, you should modify the box size otherwise the resultant clusters could contain evaporated molecules or the configuration exploration would not be thorough enough. [default = 7+M]
 
 :guilabel:`-repeat <integer>`
     each simulation is repeated (in parallel) X-times
@@ -90,7 +90,7 @@ Arguments
 Coupling between ABC and XTB
 --------------------------------
 
-This method is usefull for running flexible molecules. Note that in `input.txt` you should point to pure xyz (not the abc-xyz). You can create example input file also with JKCS0_copy
+This method is useful for running flexible molecules. Note that in `input.txt` you should point to pure xyz (not the abc-xyz). You can create example input file also with JKCS0_copy
 
 .. code:: 
    
