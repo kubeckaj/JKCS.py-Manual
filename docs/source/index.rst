@@ -15,7 +15,7 @@ This is the online documentation for JKCS = Jammy Key for Configurational Sampli
     Click here to see the installation tutorial.
 
 📍 `Citation <https://pubs.acs.org/doi/full/10.1021/acs.jpca.9b03853>`_
-    I would appritiate if citing my paper. Nevertheless, you must cite all papers for the methos and applications you use on the way toward studing molecular cluster.
+    I would appretiate wheteher you could cite our paper (see link). Nevertheless, you must cite all papers for the methods and applications you use on the way toward studying your molecular clusters. (See section Citations.)
 
 ⁉️ Questions / comments
     If you have questions, feel free to contact me: ja-kub-ecka@chem.au.dk
