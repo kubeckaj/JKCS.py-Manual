@@ -10,7 +10,7 @@ Manipulation
    
       JKQC -help
    
-Generally, use JKQC in one of the following format:
+Generally, use JKQC in one of the following formats:
 
 .. code:: bash
 
@@ -21,7 +21,7 @@ However, I would first recommend to keep the file names in the below suggested f
 File names
 ----------
 
-To get full funcitionality of JKQC, keep the file names in the follwing format:
+To get full functionality of JKQC, keep the file names in the following format:
 
 .. code:: bash
 
@@ -29,9 +29,9 @@ To get full funcitionality of JKQC, keep the file names in the follwing format:
    1sa.log 1am.log 2am3sa-1conf.log 2am3sa-2conf.log 2sa-12_23.log
    1sa.xyz 1am.xyz 2am3sa-1conf.xyz 2am3sa-2conf.xyz 2sa-12_23.xyz
 
-This means that name has of formation of enumerated monomers composition and any addtional comments are separated by a hyphen.
+This means that name has of formation of enumerated monomers composition and any additional comments are separated by a hyphen.
 
-These are strong recomendations for you file names:
+These are strong recommendations for your file names:
 
 .. list-table:: Nomenclature for molecules
     :widths: 30 30 30
@@ -52,7 +52,7 @@ These are strong recomendations for you file names:
     * - 1am = ammonia
       - 1am1p = ammonium
       -
-    * - 1ma = methyammine
+    * - 1ma = methylamine
       - 1ma1p = methylammonium
       - 
     * - 1dma = dimethylamine
@@ -61,8 +61,8 @@ These are strong recomendations for you file names:
     * - 1tma = trimethylamine
       - 1tma1p = trimethylammonium
       -
-    * - 1eda = ethylamine
-      - 1eda1p = ethylammonium
+    * - 1eda = ethylendiamine
+      - 1eda1p = ethylendiammonium
       - 
     * - 1gd = guanidine
       - 1gd1p = guanidium
@@ -86,7 +86,7 @@ These are strong recomendations for you file names:
    
 .. note::
 
-   By defaul, it is assumed that structures are saved in ``*.xyz`` file, the Gaussian/XTB output is saved in ``*.log`` files, and ORCA outputs in ``*.out`` files. You can however modify that by, e.g.:
+   By default, it is assumed that structures are saved in ``*.xyz`` file, the Gaussian/XTB output is saved in ``*.log`` files, and ORCA outputs in ``*.out`` files. You can however modify that by, e.g.:
    
    .. code::
    
@@ -103,7 +103,7 @@ Input
 input files can be any .log, .out, and .xyz files. However, if you specify, e.g., ``*.log``, it will collect information from all files with the same name.
 
 :guilabel:`database.pkl`
-  loads ``database.pkl`` file. You can load several database into one 
+  loads ``database.pkl`` file. You can load several databases into one 
 
 .. list-table:: Input data
     :widths: 30 30
@@ -158,7 +158,7 @@ You can print various other files:
   concatenate all xyz into ``movie.xyz``
   
 :guilabel:`-imos_xlsx`
-  Excell sheet input for IMoS
+  Excel sheet input for IMoS
   
 Printing properties
 -------------------
@@ -202,7 +202,7 @@ This an example how to print binding free energies in kcal/mol while taking only
    
    JKQC clusters.pkl monomers.pkl -ct -g -glob -formation -unit -noex
    
-and now with using treatment for low vibrational frequencies and anharmonity correction (CITE Grimme):
+and now with using treatment for low vibrational frequencies and anharmonicity correction (CITE Grimme):
 
 .. code:: bash
    
