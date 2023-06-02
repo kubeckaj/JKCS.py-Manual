@@ -35,13 +35,13 @@ The main outcome of the JKCS4_collect is, e.g., ``collectionXTB.pkl`` file. Howe
 
 .. hint::
 
-  The ``movieXTB.xyz`` can be easily visualize with Molden: 
+  The ``movieXTB.xyz`` can be easily visualized with Molden: 
 
   .. code::
 
      molden movieXTB.xyz
 
-If you find the ``collectionXTB.txt``, ``resultsXTB.dat``, and ``movieXTB.xyz`` files unecessary, you can only collect (:guilabel:`-oc`) the pickle:
+If you find the ``collectionXTB.txt``, ``resultsXTB.dat``, and ``movieXTB.xyz`` files unnecessary, you can only collect (:guilabel:`-oc`) the pickle:
 
 .. code::
 
@@ -51,7 +51,7 @@ If you find the ``collectionXTB.txt``, ``resultsXTB.dat``, and ``movieXTB.xyz`` 
 
    I strongly recommend checking JKQC manual for structure post-processing and manipulation of, e.g., ``collectionXTB.pkl`` file.
    
-The JKCS4_collect is submission script. If you used JKCS2_explore or JKCS3_run with the :guilabel:`-of` argument, then X+1 jobs will be submitted, i.e. one for each subfolder and one for collecting all pickles into one with post-processing (unless the :guilabel:`-oc` argument (only collect) is used). In other case, 1+1 jobs are submitted. You can use all submission argument to control the submission (see the submission section), e.g.:
+The JKCS4_collect is a submission script. If you used JKCS2_explore or JKCS3_run with the :guilabel:`-of` argument, then X+1 jobs will be submitted, i.e. one for each subfolder and one for collecting all pickles into one with post-processing (unless the :guilabel:`-oc` argument (only collect) is used). In other case, 1+1 jobs are submitted. You can use all submission arguments to control the submission (see the submission section), e.g.:
 
 .. code::
 
