@@ -114,7 +114,7 @@ Modify the following line in the ``~/.JKCSusersetup.txt``:
 
    PATH_XTB="[-XTB-folder-path-]"            #e.g.: "/user/kubeckaj/XTB6.4" 
    
-If you want to use the XTB program by yourself, either use the full path directory to the excecutables or put the following lines to your ``~/.bashrc`` file:
+If you want to use the XTB program by yourself, either use the full path directory to the executables or put the following lines to your ``~/.bashrc`` file:
 
 .. code:: bash
 
@@ -131,14 +131,14 @@ then you should be able to run XTB, e.g.:
 Gaussian
 ========
 
-I hope that you know how to call gaussian jobs. If not ask a God person around you how to do it. 
-Usually you load gaussian from a module, e.g.:
+I hope that you know how to call Gaussian jobs. If not ask a blessed person around you how to do it. 
+Usually you load Gaussian from a module, e.g.:
 
 .. code:: bash
 
    module load gaussian
    
-then you can figure out where is gaussian located, e.g.:
+then you can figure out where are located Gaussian executables, e.g.:
 
 .. code:: bash
 
