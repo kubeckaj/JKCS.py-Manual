@@ -6,7 +6,7 @@ How to QML
 
 .. note::
 
-   When setting up JKCS, you should use :guilabel:`-qml` in orger to install QML, e.g.:
+   When setting up JKCS, you should use :guilabel:`-qml` in order to install QML, e.g.:
    
    .. code::
    
@@ -69,7 +69,7 @@ The structures should be provided in a pickled .pkl files (see ``JKQC`` manual).
       JKQC full_DFT.pkl -extract 4sa0-5w   -out test_DFT.pkl 
 
 Machine Learning
----------------
+----------------
       
 ``JKML`` is used similarly as other ``JKCS`` commands 
 
