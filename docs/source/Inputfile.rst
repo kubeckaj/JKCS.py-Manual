@@ -64,7 +64,7 @@ SUPERCOMPUTER PARAMETERS
 ------------------------
 
 This section defines parameters for submitting JKCS to (super)computer cluster. JKCS communicates
-with 3rd-party programs that are further abreviated as: ABC = ABCluster, XTB, G16 = Gaussian16, and ORCA. For each
+with 3rd-party programs that are further abbreviated as: ABC = ABCluster, XTB, G16 = Gaussian16, and ORCA. For each
 program, the following parameters need to be specified:
 
 :guilabel:`MAXTASKS`
