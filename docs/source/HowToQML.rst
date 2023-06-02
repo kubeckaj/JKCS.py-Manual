@@ -68,7 +68,7 @@ The structures should be provided in a pickled .pkl files (see ``JKQC`` manual).
       JKQC full_DFT.pkl -extract 0-3sa0-5w -out train_DFT.pkl
       JKQC full_DFT.pkl -extract 4sa0-5w   -out test_DFT.pkl 
 
-Machine Lerning
+Machine Learning
 ---------------
       
 ``JKML`` is used similarly as other ``JKCS`` commands 
