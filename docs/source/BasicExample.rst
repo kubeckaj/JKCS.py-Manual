@@ -86,22 +86,71 @@ The very same thing with comments:
 
    #configurational sampling that produces over all possible
    # monomer cominations only 2000 minima. The files are in 
-   # the end pickled to save mo
+   # the end pickled and remove to save memory. Structures 
+   # with large radius are completely removed.
    JKCS2_explore -pop 3000 -gen 200 -lm 2000/NoC -cpu 1 -time 3-00:00:00 -exploded -par q64,q48,q40,q28,q24,q20
+   
+   #Performs XTB optimization with the same folder architecture
+   # as in the ABC folder, i.e. one job is submitted for each
+   # conformer combination and optimizing 2000/NoC structures
    JKCS3_run -of ABC -nf XTB -m "--gfn 1 --opt" -cpu 1 -time 1-00:00:00 -par q64,q48,q40,q28,q24,q20
+   
+   #This will Only Collect the pickle file: collectionXTB.pkl
    JKCS4_collect XTB -oc -time 1-00:00:00
+   
+   #Here we get rid of those structrues that converged to the same 
+   # minima, i.e. having the same configuration. For that we compare
+   # similarity between electronic energy, gyration radius and dipole
+   # at the same time. You could use e.g. -arbalign <float> instead
    JKQC collectionXTB.pkl -unique rg,el,dip -out filteredXTB0.pkl
+   
+   #well this one will work for you only if your JKsend is set properly.
+   # Nevertheless, the JKQC command will remove structures that reacted 
+   # during XTB optimization (it does compare the non-hydrogen skelets),
+   # then the 1000 electronic-energy lowest structures are saved for 
+   # next calculation. (-noex = do not print example)
    sbatch -n 1 JKsend 'JKQC filteredXTB0.pkl -reacted -sort el -select 1000 -noex -out filteredXTB.pkl -ePKL > TO_DO_DFT.dat' | awk '{print $4}' >> .jobs.txt
-   JKCS3_run -p G16 -rf TO_DO_DFT.dat -nf DFT_SP -m "# wb97xd 6-31++g**" -time 2:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
+   
+   #Run Gaussian SP calculation from the Result File TO_DO_DFT.dat. It 
+   # does submit 8-cpu job for each line in that file. The jobs is always
+   # an array, but now only 25 calculations will run at a time. The
+   # maxtasks value says that we guarantee that no more than 1000 lines
+   # is saved in the results file (prevents submitting to many jobs)
+   JKCS3_run -p G16 -rf TO_DO_DFT.dat -nf DFT_SP -m "# wb97xd 6-31++g**" -time 2:00:00 -cpu 8 -maxtasks 1000 -arraymax 25
+   
+   #Again we collect the data
    JKCS4_collect DFT_SP -oc -time 1-00:00:00
+   
+   #Now we select only 100 lowest energies
    JKQC collectionDFT_SP.pkl -sort el -select 100 -noex -ePKL > runDFT.dat
-   JKCS3_run -p G16 -rf runDFT.dat -nf DFT_opt -m "# wb97xd 6-31++g** opt" -time 3-00:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
+   
+   #and submit them again for Gaussian calculation
+   JKCS3_run -p G16 -rf runDFT.dat -nf DFT_opt -m "# wb97xd 6-31++g** opt" -time 3-00:00:00 -cpu 8 -maxtasks 100 -arraymax 25
+   
+   #Again we collect the data
    JKCS4_collect DFT_opt -oc -time 1-00:00:00
+   
+   #We just prepare next calculation
    JKQC collectionDFT_opt.pkl -noex -ePKL > runDFTO.dat
+   
+   #Now we calculate vibrational frequencies. Theoretically, you could 
+   # combine it with the previous step but this is very practical as
+   # some of the optimization do not finish do to presence of shallow minima
    JKCS3_run -p G16 -rf runDFTO.dat -nf DFT_freq -m "# wb97xd 6-31++g** freq" -time 1-00:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
+   
+   #Again we collect the data
    JKCS4_collect DFT_freq -time 1-00:00:00 -oc
+   
+   #We filter out all data for which the lowest vibrational frequency 
+   # is less than 0 (i.e. imaginary). Then we select 5 lowest Gibbs free
+   # energy structure after we correct for the low vibrational frequencies
+   # with threshold of 100 cm-1
    JKQC collectionDFT_freq.pkl -pass lf 0 -sort g -fc 100 -v 0.996 -select 5 -noex -ePKL > runDLPNO.dat
+   
+   #Now we submit ORCA calculation. We add an extra memory
    JKCS3_run -p ORCA -rf runDLPNO.dat -nf DLPNO -m "! aug-cc-pVTZ aug-cc-pVTZ/C cc-pVTZ-F12-CABS DLPNO-CCSD(T) TightSCF" -time 2-00:00:00 -cpu 8 -mem 20gb
+   
+   #Again we collect the data
    JKCS4_collect DLPNO -time 1-00:00:00 -orca -oc
 
 Tips & Tricks
