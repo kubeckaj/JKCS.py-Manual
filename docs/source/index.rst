@@ -22,6 +22,7 @@ This is the online documentation for JKCS = Jammy Key for Configurational Sampli
     
 📜 Thanks
     I would like to thank all people who helped me to develope, improve, and debug the JKCS/JKQC/JKML program: Vitus Besel, Ivo Neefjes, Yosef Knattrup, and others ❤️
+    Thankx also goes to the newest contributors: Daniel Ayioubi (for JKTS), and Haide Wu (for JKout2xyz)
     
 Manual structure
 ----------------
