@@ -5,3 +5,4 @@ sphinx-design
 sphinx_copybutton
 sphinx_togglebutton
 sphinx-togglebutton
+sphinx_rtd_theme
