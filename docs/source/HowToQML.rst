@@ -2,7 +2,7 @@
 How to QML
 ==========
 
-``JKML`` uses QML (https://www.qmlcode.org/index.html) for kernel ridge regression (KRR) applied on molecular representation (FCHL) to predict molecular system properties. 
+``JKML`` by default uses QML (https://www.qmlcode.org/index.html) for kernel ridge regression (KRR) applied on molecular representation (FCHL) to predict molecular system properties. 
 
 .. note::
 
