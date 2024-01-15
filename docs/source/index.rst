@@ -63,4 +63,10 @@ Manual structure
    HowToQML
    HowToSchNetPack
 
+.. toctree::
+   :maxdepth: 3
+   :caption: JKTS
+
+   JKTS
+
    
