@@ -67,7 +67,7 @@ Here is more advanced example:
    JKCS3_run -of ABC -nf XTB -m "--gfn 1 --opt" -cpu 1 -time 1-00:00:00 -par q64,q48,q40,q28,q24,q20
    JKCS4_collect XTB -oc -time 1-00:00:00
    JKQC collectionXTB.pkl -unique rg,el,dip -out filteredXTB0.pkl
-   sbatch -n 1 JKsend 'JKQC filteredXTB0.pkl -reacted -sort el -select 1000 -noex -out filteredXTB.pkl -ePKL > TO_DO_DFT.dat' | awk '{print $4}' >> .jobs.txt
+   JKQC filteredXTB0.pkl -reacted -sort el -select 1000 -noex -out filteredXTB.pkl -ePKL > TO_DO_DFT.dat
    JKCS3_run -p G16 -rf TO_DO_DFT.dat -nf DFT_SP -m "# wb97xd 6-31++g**" -time 2:00:00 -cpu 8 -maxtasks 10000 -arraymax 25
    JKCS4_collect DFT_SP -oc -time 1-00:00:00
    JKQC collectionDFT_SP.pkl -sort el -select 100 -noex -ePKL > runDFT.dat
@@ -109,7 +109,7 @@ The very same thing with comments:
    # during XTB optimization (it does compare the non-hydrogen skelets),
    # then the 1000 electronic-energy lowest structures are saved for 
    # next calculation. (-noex = do not print example)
-   sbatch -n 1 JKsend 'JKQC filteredXTB0.pkl -reacted -sort el -select 1000 -noex -out filteredXTB.pkl -ePKL > TO_DO_DFT.dat' | awk '{print $4}' >> .jobs.txt
+   JKQC filteredXTB0.pkl -reacted -sort el -select 1000 -noex -out filteredXTB.pkl -ePKL > TO_DO_DFT.dat
    
    #Run Gaussian SP calculation from the Result File TO_DO_DFT.dat. It 
    # does submit 8-cpu job for each line in that file. The jobs is always
