@@ -153,6 +153,27 @@ The very same thing with comments:
    #Again we collect the data
    JKCS4_collect DLPNO -time 1-00:00:00 -orca -oc
 
+Large clusters
+--------------
+
+This is what we (H. Wu and G. Hasan) typically use for large clusters (freshly-nucleated particles) where only one conformer combination (ionic) is used. 
+
+.. code:: bash
+
+   JKCS2_explore -pop 1280 -gen 320 -repeat 10 -sc 4 -lm 1000 -expl -cpu 8
+   JKCS4_collect ABC -oc
+   JKCS3_run -p XTB -rf collectionABC.pkl -nf XTBopt -m "--opt --gfn 1" -maxtasks 1000 -cpu 2 -tpj 10 -mf 1000 -time 10:00:00 -arraymax 400
+   JKCS4_collect XTBopt -oc
+   JKQC collectionXTBopt.pkl -uniq rg,el,dip -out collectionXTBopt_filtered.pkl #-reacted (optional)
+   JKCS3_run -p ORCA -rf collectionXTBopt_filtered.pkl -nf B97-3Csp -m "! b97-3c TightSCF" -time 1-00:00:00 -maxtasks 1000 -cpu 2 -tpj 10 -mf 1000 -mem 8GB -arraymax 400
+   JKCS4_collect B97-3Csp -orca -oc
+   JKQC collectionB97-3Csp.pkl -sort el -select 1000 -out collectionB97-3Csp_filtered.pkl
+   JKCS3_run -p ORCA -rf collectionB97-3Csp_filtered.pkl -nf B97-3Cpartopt -m "! b97-3c opt TightSCF" -time 12:00:00 -maxtasks 1000 -cpu 2 -mem 8GB -arraymax 150 -add maxiter 40
+   JKCS4_collect B97-3Cpartopt -orca -oc
+   JKQC collectionB97-3Cpartopt.pkl -unique rg,el,dip -sort el -select 100 -out collectionB97-3Cpartopt_filtered.pkl
+   JKCS3_run -p ORCA -rf collectionB97-3Cpartopt_filtered.pkl -nf B97-3Coptfreq -m "! b97-3c opt TightSCF Anfreq" -time 12:00:00 -maxtasks 100 -cpu 8 -mem 12GB
+   JKCS4_collect B97-3Coptfreq -orca -oc -loc
+
 Tips & Tricks
 -------------
 
