@@ -23,10 +23,11 @@ Clone the JKCS from github, (modify setup [see the hint below first]), and run `
 
    git clone https://github.com/kubeckaj/JKCS2.1.git
    cd JKCS2.1
-   sh setup.sh -help
-   sh setup.sh -r   
+   sh setup.sh -help  #see the help first
+   sh setup.sh -r     #-r = rewrites your current ~/.JKCSusersetup.txt setup
+   #or: sh setup.sh -r -python python3.9 -module "module load python-data/3.9"
 
-The argument :guilabel:`-r` will everytime rewrite your ``~/.JKCSusersetup.txt`` if it already exists. Once you setup all paths in ``~/.JKCSusersetup.txt``, you can check if everything what you need is set properly by:
+Once you modify all paths in ``~/.JKCSusersetup.txt``, you can check if everything that you need is set properly by:
 
 .. code:: bash
 
