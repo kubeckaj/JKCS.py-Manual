@@ -184,6 +184,36 @@ This is what we (H. Wu and G. Hasan) typically use for large clusters (freshly-n
    JKCS3_run -p ORCA -rf collectionB97-3Cpartopt_filtered.pkl -nf B97-3Coptfreq -m "! b97-3c opt TightSCF Anfreq" -time 12:00:00 -maxtasks 100 -cpu 8 -mem 12GB
    JKCS4_collect B97-3Coptfreq -orca -oc -loc
 
+Enhanced exploration for organic clusters
+-----------------------------------------
+
+This is what Jakko Kahara uses for organic dimers (trimers...), which first tries to provide more reasonable structures to CREST by arranging some functional groups together
+
+.. code:: bash
+
+   JKCS2_explore -constraints "-nfiles 5000" -gen 5 -box 2 -exploded
+   JKCS3_run -p XTB -rf ABC_XTB -nf XTB -m "--gfn 1 --opt tight" -par small -time 72:00:00 -tpj 1000 -maxtasks 10
+   JKQC collectionXTB.pkl -ePKL -rg -el -sort el -cutr 15 -select 1000 -uniq -noex > resultsXTB.dat
+
+   # First SP DFT
+   JKCS3_run -rf XTB -nf DFT0 -m "# B97D3 Def2SVPP DensityFit pop=mkuff" -par small -time 72:00:00 -maxtasks 100 -tpj 100 -p G16
+   JKQC collectionDFT0.pkl -ePKL -rg -el -sort el -cutr el 8 -select 100 -noex > resultsDFT0.dat
+
+   # superfast CREST with reduced settings
+   JKCS3_run -p CREST -rf DFT0 -nf CREST -m "--gfn1 --nci --len x0.1 --wscal 0.6 --mquick" -par small -time 72:00:00 -tpj 10
+   JKQC collectionCREST.pkl -ePKL -rg -el -sort el -cutr 15 -select 1000 -uniq -noex > resultsCREST.dat
+
+   # Second SP DFT
+   JKCS3_run -rf CREST -nf DFTCREST -m "# B97D3 Def2SVPP DensityFit pop=mkuff" -par small -time 72:00:00 -maxtasks 100 -tpj 100 -p G16
+   JKQC collectionDFTCREST.pkl collectionDFT0.pkl -ePKL -rg -el -sort el -cutr el 8 -uniq -select 100 -noex -out todo.pkl > resultsTODO.dat
+
+   JKCS3_run -p G16 -rf TODO -nf DFT -m "# B97D3 Def2SVPP DensityFit opt=(loose,MaxCycle=250) pop=mkuff" -par small -time 72:00:00 -maxtasks 100 -tpj 10
+   JKQC -folder DFT -R -forces -out collectionDFT.pkl -noex -ePKL -rg -el -sort el -uniq rg,el,dip > resultsDFT.dat
+
+   JKCS3_run -p G16 -rf TODO -nf FREQ -m "# B97D3 Def2SVPP DensityFit opt=(tight,MaxCycle=250) freq pop=mkuff" -par small -time 72:00:00 -maxtasks 100 -tpj 10
+   JKQC collectionFREQ.pkl -ePKL -rg -el -g -sort g > resultsFREQ.dat
+   # reoptimize the best results at some higher level
+
 Tips & Tricks
 -------------
 
