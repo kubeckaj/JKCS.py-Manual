@@ -33,9 +33,52 @@ If you want to be sure you have really equilibrate your system well, then it is 
    #module load gnuplot/5.4.3
    gnuplot <<< "set log x; p 'temps.txt' u 1 t 'T', '' u 2 t 'Tt', '' u 3 t 'Tr', '' u 4 t 'Tv'; pause 10"  
 
+In the end the the mean temperature should be near the desired temperature. 
+
 .. image:: equilibration.png
       :alt: filesstructure
-      :width: 200
+      :width: 600
       :align: center
 
+.. note::
+
+   Langeving thermostat will not reach the exact temperature if you use QC methods.
+
+You can save some simulation time by setting initial veloiciton of the atoms based on Maxwell-Boltzmann distribution:
+
+.. code-block:: bash
+
+   JKMD system.pkl -mb 300 -langevin 0.01 -dt 1 -ns 10000 -dump 0 -nf EQUILIBRATION -loc
+
+.. note::
+
+   As this might initiate some velicities very wrong, I prefer to use lower temperature, e.g. 200 K. This is mainly important for ML simulations as wringly started simulation can bring you to a part of PES which is not well trained with the ML.
+
+If you want to visualize the equilibration, than you should dump the the trajectory. I think that 10-50 ps is fair enough.
+
+.. code-block:: bash
+
+   JKMD system.pkl -langevin 0.01 -dt 1 -ns 10000 -dump 50 -nf EQUILIBRATION -loc
+   JKQC EQUILIBRATION/simcalc-LM.pkl -movie
+   molden movie.xyz
+
+Potential Issues
+================
+
+Here is a list of problems you might encounter:
+- Your system explodes: Well, maybe your initial structure is far from some equilibrium or large forces are present. Try to lower the timestep at least during the equilibration.
+- Your system is not equilibrated: This can easily happen for vibrational temperature of small molecules. You can try to tighten the thermostat during equilibration. In the case of large molecular systems, you might need more time to equilibrate.
+- Too slow equilibration: Try to use some cheaper method for equilibration. Then the subsequent equilibration at the desired level of theory will be faster.
+
+Follow Up Simulation
+====================
+
+You can run equilibration and the data stored will contain the positions and velocities, which you can later use for the MD simulation of your choice:
+
+.. code-block:: bash
+
+   JKMD system.pkl -mb 300 -langevin 0.01 -dt 1 -ns 10000 -dump 0 -nf EQUILIBRATION -loc 
+   JKMD EQUILIBRATION/simcalc-LM.pkl -dt 1 -csvr 25 -dump 50 -nf MD_SIMULATION -loc
+  
+ 
 
