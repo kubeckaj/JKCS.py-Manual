@@ -65,6 +65,12 @@ Manual structure
 
 .. toctree::
    :maxdepth: 3
+   :caption: JKMD
+   
+   JKMD/HowToJKMD
+
+.. toctree::
+   :maxdepth: 3
    :caption: JKTS
 
    JKTS
