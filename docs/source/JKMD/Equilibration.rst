@@ -80,5 +80,17 @@ You can run equilibration and the data stored will contain the positions and vel
    JKMD system.pkl -mb 300 -langevin 0.01 -dt 1 -ns 10000 -dump 0 -nf EQUILIBRATION -loc 
    JKMD EQUILIBRATION/simcalc-LM.pkl -dt 1 -csvr 25 -dump 50 -nf MD_SIMULATION -loc
   
+However, if you want to submit the job to the cluster, it make sense that you immediately run the two simulation in series. Therefore, the argument ``-folow`` allows you the start completely separate simulation. Note, that all parameters from the previous simulation are used unless redefined after the ``-folow`` argument. You can run the above like this:
+
+.. code-block:: bash
+
+  JKMD system.pkl -mb 300 -langevin 0.01 -dt 1 -ns 10000 -dump 0 -nf EQ+MD_SIM -follow -csvr 25 -dump 50
  
+Well, another example which is rather interesting:
+
+.. code-block:: bash
+
+  JKMD system.pkl -mb 300 -langevin 0.01 -dt 1 -ns 10000 -dump 0 -nf EQ+EQ -follow
+
+This would initiate the velocities and that run twice the 10k step simulation using Langevin thermostat but saving only the middle and final structures.
 

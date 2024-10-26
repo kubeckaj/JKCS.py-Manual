@@ -70,6 +70,7 @@ Manual structure
    JKMD/HowToJKMD
    JKMD/Equilibration
    JKMD/UmbrellaSampling
+   JKMD/Pulling
 
 .. toctree::
    :maxdepth: 3
