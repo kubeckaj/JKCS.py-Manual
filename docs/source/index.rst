@@ -1,4 +1,4 @@
-.. image:: Webp.net-resizeimage.png
+.. image:: JKCS-image.png
       :alt: JKCS
       :width: 600
       
@@ -30,49 +30,51 @@ Manual structure
 
 .. toctree::
    :maxdepth: 3
-   :caption: GET STARTED
+   :caption: GENERAL
    
-   JKCSSetupAndInstallation
-   Citation
-   ClusterSubmission
+   JK/JKCSSetupAndInstallation
+   JK/Citation
+   JK/ClusterSubmission
 
 .. toctree::
    :maxdepth: 3
    :caption: JKCS
    
-   BasicExample
-   Inputfile
-   JKCS0_copy
-   JKCS1_prepare
-   JKCS2_explore
-   JKCS3_run
-   JKCS4_collect
-   JKCS5_filter
+   JKCS/BasicExample
+   JKCS/Inputfile
+   JKCS/JKCS0_copy
+   JKCS/JKCS1_prepare
+   JKCS/JKCS2_explore
+   JKCS/JKCS3_run
+   JKCS/JKCS4_collect
+   JKCS/JKCS5_filter
    
 .. toctree::
    :maxdepth: 3
    :caption: JKQC
    
-   JKQCSetupAndInstallation
-   DatabaseManipulation
+   JKQC/JKQCSetupAndInstallation
+   JKQC/DatabaseManipulation
    
 .. toctree::
    :maxdepth: 3
    :caption: JKML
 
-   HowToQML
-   HowToSchNetPack
+   JKML/HowToQML
+   JKML/HowToSchNetPack
 
 .. toctree::
    :maxdepth: 3
    :caption: JKMD
    
    JKMD/HowToJKMD
+   JKMD/Equilibration
+   JKMD/UmbrellaSampling
 
 .. toctree::
    :maxdepth: 3
    :caption: JKTS
 
-   JKTS
+   JKTS/JKTS
 
    
