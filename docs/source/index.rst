@@ -11,7 +11,7 @@ This is the online documentation for JKCS = Jammy Key for Configurational Sampli
 ⚙️ `JKCS <https://github.com/kubeckaj/JKCS2.1/>`_
     The JKCS program can be on GitHub. The installation of JKCS also enables JKQC and JKML.
 
-📚 `Installation <https://jkcs.readthedocs.io/en/latest/JKCSSetupAndInstallation.html>`_
+📚 `Installation <https://jkcs.readthedocs.io/en/latest/JK/JKCSSetupAndInstallation.html>`_
     Click here to see the installation tutorial.
 
 📍 `Citation <https://pubs.acs.org/doi/full/10.1021/acs.jpca.9b03853>`_

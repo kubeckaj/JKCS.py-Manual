@@ -22,6 +22,7 @@ If you run NVT simulation the goal is to equilibrate the slowest process in the 
 This would perform equilibration on the local computer for tha last structure stored in system.pkl.
 It will produce EQUILIBRATION folder with one equilibrated structures stored in the simcalc-LM.pkl. The log file from the simulation will be stored in EQUILIBRATION/calc-LM/output.
 
+
 Verify
 ======	
 

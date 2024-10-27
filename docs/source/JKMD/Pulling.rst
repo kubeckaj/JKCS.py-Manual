@@ -12,9 +12,9 @@ Here, we will discuss how to pull various moulecules. As an example, I will take
 
 .. code-block:: bash
 
-   JKMD 10w.xyz -recenter 1cl.xyz -moveto [6,0,0] -ns 0 -loc
+   JKMD 10w.xyz -recenter 1cl.xyz -chrg -1 -moveto [6,0,0] -ns 0 -loc
 
-This will take quite short time, but as all the libraries has to be loaded, it can take even up tens of seconds. In the you will get this:
+This will take quite short time as only single-point calculation is performed. In the end you will get this:
 
 .. image:: 10w1cl.png
       :alt: filesstructure
@@ -23,16 +23,25 @@ This will take quite short time, but as all the libraries has to be loaded, it c
 
 This is the system we will work with. 
 
-Pulling a molecule
-==================
+Pulling a specie
+================
 
-If you wnat to pull the chloride, it is quite easy because it is a separate molecule. Let us pull it towards the cluster:
+If you want to pull the chloride, it is quite easy because it is a separate file, i.e. a separate specie. Let us pull it towards the cluster:
 
 .. code-block:: bash
 
-   JKMD 10w.xyz -recenter 1cl.xyz -moveto [6,0,0] -EF_c_COM [-1,0,0] -ns 1000 -loc
+   JKMD 10w.xyz -recenter 1cl.xyz -chrg -1 -moveto [6,0,0] -EF_c_COM [-1,0,0] -ns 1000 -loc
 
-The force applied on the COM = center of mass is 1 eV/Angstrom in the direction of the cluster.
+The force applied on the COM = center of mass is 1 kcal/mol/Angstrom in the direction of the cluster.
 
+We could also go oppositely and pull the water cluster towards the chloride. By applying 1 kcal/mol/Angstrom on the cluster COM, the force gets redistributed over the cluster atoms to give all species the same acceleration. 
 
+.. code-block:: bash
+
+   JKMD 10w.xyz -recenter -EF_c_COM [1,0,0] 1cl.xyz -chrg -1 -moveto [6,0,0] -ns 1000 -loc
+
+Pulling a fragment
+==================
+
+Well I have not built this yet. However, at some point I will. For now you can just simply split your xyz file into fragments on your own.
 
