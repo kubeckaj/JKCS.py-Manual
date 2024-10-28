@@ -8,17 +8,16 @@ About & Usage
 Installing JKMD
 ===============
 
-You just need some Python libraries that JKQC is using and the Python calculators such as XTB, TBlite, ORCA. Hence, if you during setup of the JKCS did not use -calculators or -all arguments, you must update those:
+You just need some Python libraries that is also required by JKQC and the Python calculators such as XTB, TBlite, ORCA. Hence, if you during setup of the JKCS did not use :guilabel:`-calculators` or :guilabel:`-all`, you must update those:
 
 .. code-block:: bash
 
    cd JKCS2.1
    sh setup.sh -update -calculators
 
-
 .. hint::
    
-   If you are doing your first setup, using -all might be quite heavy, so try to specify just what do you want to use and eventually add your group name if I predefined some paths for you:
+   If you are doing your first setup, using :guilabel:`-all` might be quite heavy, so try to specify just what do you want to use and eventually add your group name if I predefined some paths for you:
  
   .. code-block:: bash
 
@@ -31,7 +30,7 @@ You just need some Python libraries that JKQC is using and the Python calculator
 Introduction
 ============
 
-JKMD use ASE to generater MD simulations. It is a submitable script, so unless you use argument ``-loc`` it is going to be submitted via SLURM to the cluster. 
+JKMD use ASE to generater MD simulations. It is a submitable script, so unless you use argument :guilabel:`-loc` it is going to be submitted via SLURM to the cluster. 
 
 JKMD has its own help, so always try to follow that one:
 
@@ -42,8 +41,12 @@ JKMD has its own help, so always try to follow that one:
 The in which arguments follow are important here. There several categories to setup:
 - The system, specie by specie and their properties and constraints
 - The simulation and thermostat setup
-- The -follow argument to separate two subsequent simulations
+- The :guilabel:`-follow` argument to separate two subsequent simulations
 - The -loc argument or cluster submission arguments 
+
+.. note::
+
+   The simulation are performed in the SIM<int> folder unless you specified the folder name by :guilabel:`-nf`. 
 
 Setting up the system
 =====================
@@ -79,7 +82,7 @@ I will just present several examples, where I will calcualte only SP calculation
 Setting up the simulation
 =========================
 
-Unless you use Velocity Verlet algorithm (-vv), you can run NVT with thermostat like Langevin, CSVR, and Nóse-Hoover. These use some constant of coupling. For instance, the CSVR constant of 25 fs can indeed bring some systems in 25 fs to equilibrium but for other systems you must you stronger coupling to achieve the same goal. At the same time you should define other simulation parameters (-ns, -dt, -dump) and the calculator (-xtb1, -xtb2, -orca). Let us see few examples:
+Unless you use Velocity Verlet algorithm (:guilabel:`-vv`), you can run NVT with thermostat like Langevin, CSVR, and Nóse-Hoover. These use some constant of coupling. For instance, the CSVR constant of 25 fs can indeed bring some systems in 25 fs to equilibrium but for other systems you must you stronger coupling to achieve the same goal. At the same time you should define other simulation parameters (:guilabel:`-ns`, :guilabel:`-dt`, :guilabel:`-dump`) and the calculator (:guilabel:`-xtb1`, :guilabel:`-xtb2`, :guilabel:`-orca`). Let us see few examples:
 
 .. code-block:: bash
 
@@ -104,9 +107,9 @@ You can combine two simulations, typically equilibration and MD. You can run it 
 The cluster submission
 ======================
 
-You can also submit the job to the cluster. In that case the argument ``-loc`` is not necessary. The job will be submitted to the cluster and will be executed there. See the `Cluster submission <https://jkcs.readthedocs.io/en/latest/JK/ClusterSubmission.html>`_ for more details. 
+You can also submit the job to the cluster. In that case the argument :guilabel:`-loc` is not necessary. The job will be submitted to the cluster and will be executed there. See the `Cluster submission <https://jkcs.readthedocs.io/en/latest/JK/ClusterSubmission.html>`_ for more details. 
 
-In the case of the `-repeat` argument, an array of jobs will be submitted. You can also use "--" to express a range of variables. For instance:
+In the case of the :guilabel:`-repeat` argument, an array of jobs will be submitted. You can also use "--" to express a range of variables. For instance:
 
 .. code-block:: bash
 
