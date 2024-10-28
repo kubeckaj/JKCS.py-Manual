@@ -99,8 +99,13 @@ Then WHAM is used to obtain the free energy profile
       :width: 600
       :align: center
 
-That one is further integrated over to give you the free energy binding of the SA-SA system. It is the last number in the `umbrella_integration/output` file. In this case we got -4.01 kcal/mol. As you can see the free energy depth is not exactly the same as the binding free energy!
+That one is further integrated over to give you the free energy binding of the SA-SA system. It is the last number in the `umbrella_integration/output` file. In this case we got -4.01 kcal/mol = -16.77 kJ/mol. As you can see the free energy depth is not exactly the same as the binding free energy!
 
 .. note::
 
    Make sure that the plotdG.png converges to a constant, otherwise there is something wrong with the simulation.
+
+Citation
+========	
+
+In this package, I use umbrella integration from github repository which you should cite: 10.5281/zenodo.164996. Also, you could cite Kaestner and Thiel (10.1063/1.2052648) whose equations are used in the umbrella integration. If you are using the uncertainties, then cite also 10.1063/1.2206775. 
