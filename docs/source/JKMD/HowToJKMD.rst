@@ -8,16 +8,16 @@ About & Usage
 Installing JKMD
 ===============
 
-You just need some Python libraries that is also required by JKQC and the Python calculators such as XTB, TBlite, ORCA. Hence, if you during setup of the JKCS did not use :guilabel:`-calculators` or :guilabel:`-all`, you must update those:
+You just need some Python libraries that is also required by JKQC and the Python calculators such as XTB, TBlite, ORCA. Hence, if you during setup of the JKCS did not use :guilabel:`-calculators` or :guilabel:`-all`, you must update (:guilabel:`-up`) those:
 
 .. code-block:: bash
 
    cd JKCS2.1
-   sh setup.sh -update -calculators
+   sh setup.sh -up -calculators
 
 .. hint::
    
-   If you are doing your first setup, using :guilabel:`-all` might be quite heavy, so try to specify just what do you want to use and eventually add your group name if I predefined some paths for you:
+   If you are doing your first setup, you are not only setting up JKCS and installing Python libraries. Using :guilabel:`-all` libraries might be quite heavy, so try to specify just what do you want to use and eventually add your group name if I predefined some paths for you:
  
   .. code-block:: bash
 
